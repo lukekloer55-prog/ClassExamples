@@ -1,4 +1,10 @@
-﻿using System.Diagnostics;
+﻿/*Luke Kloer
+Rcet 2265
+Semester 3
+RCET
+https://github.com/lukekloer55-prog/HelloWorld.git*/
+
+using System.Diagnostics;
 
 namespace SayMyName
 {
