@@ -334,9 +334,7 @@ namespace SimpleCalculator
 
                     }
                 }
-
             }
-
         }
     }
 }
