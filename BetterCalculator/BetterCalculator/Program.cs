@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*Luke Kloer
+Rcet 2265
+Semester Spring 2026
+RCET 2265 - Programming in C#
+SayMyName Program
+GitHub URL:
+https://github.com/lukekloer55-prog/ClassExamples/tree/main/BetterCalculator */
+
+using System;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace BetterCalculator
