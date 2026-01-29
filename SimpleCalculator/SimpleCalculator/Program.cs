@@ -97,7 +97,7 @@ namespace SimpleCalculator
                         {
                             indexOption++;
 
-                            if (indexOption > 2)
+                            if (indexOption >= options.Count)
                             {
                                 indexOption = 0;
                             }
