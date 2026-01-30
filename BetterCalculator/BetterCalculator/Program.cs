@@ -11,7 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace BetterCalculator
 {
-    internal class Program
+    public class BetterCalculator
     {
         static void Main(string[] args)
 
