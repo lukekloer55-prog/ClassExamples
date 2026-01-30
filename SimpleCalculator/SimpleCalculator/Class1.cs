@@ -4,7 +4,8 @@ using System.Text;
 
 namespace SimpleCalculator
 {
-    internal class Class1
+    public static class Class1
     {
+
     }
 }

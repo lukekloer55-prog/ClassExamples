@@ -20,6 +20,8 @@ namespace SimpleCalculator
         public static void Main(string[] args)
 
         {
+            
+
             int indexOption = (0);
 
             List<string> options = new List<string>();
