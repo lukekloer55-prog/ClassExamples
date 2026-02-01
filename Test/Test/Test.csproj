@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="BetterCalculator">
-      <HintPath>..\..\BetterCalculator\BetterCalculator\obj\Debug\net10.0\BetterCalculator.dll</HintPath>
-    </Reference>
     <Reference Include="Projects2026Library">
       <HintPath>..\..\Projects2026Library\Projects2026Library\bin\Debug\net10.0\Projects2026Library.dll</HintPath>
     </Reference>
