@@ -11,10 +11,16 @@ namespace SayMyNameAgain
         static void Main(string[] args)
         {
 
+            //The program will ask the user for their name and respond with a unique message for certain names.
+            //It does this using a switch statement to compare the input against constants for each name.
+            //If the name is not one of the constants it will respond with a generic message.
+
+
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkCyan;
+            //Sets the console colors
 
-            returnsaymyName:
+         returnsaymyName: //Refrence point for goto statement
 
             do
             {
@@ -23,9 +29,10 @@ namespace SayMyNameAgain
                 string userName = Console.ReadLine();
 
                 const String Emily = "Emily";
-                const String Joe = "Joe";
+                const String Joe = "Joe";   
                 const String Luke = "Luke";
                 const String Tim = "Tim";
+                //Constants for the names to be compared against
 
                 switch (userName)
                 {
@@ -49,6 +56,7 @@ namespace SayMyNameAgain
                     default:
                         Console.WriteLine("Your name is very generic sorry! ;(");
                         break;
+                        //Case statements for each name constant and a default for anything else.
                 }
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
