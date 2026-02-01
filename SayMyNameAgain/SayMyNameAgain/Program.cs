@@ -1,7 +1,9 @@
 ﻿/*Luke Kloer
 Rcet 2265
-Semester 3
-RCET
+Semester Spring 2026
+RCET 2265 - Programming in C#
+SayMyNameAgain Program
+GitHub URL:
 https://github.com/lukekloer55-prog/ClassExamples/tree/main/SayMyNameAgain */
 
 namespace SayMyNameAgain
