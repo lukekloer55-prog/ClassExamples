@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization.Formatters;
+﻿using System.ComponentModel.Design;
+using System.Runtime.Serialization.Formatters;
 using System.Text.RegularExpressions;
 
 namespace MultiplicationTable
@@ -12,22 +13,28 @@ namespace MultiplicationTable
             Console.WriteLine("Please choose the size of the table (e.g., 12x12 for a 12x12 table): ");
             Console.WriteLine("Do this in the format, (value x value)");
             string tableSize = Console.ReadLine();
-           
-
-            int rowLength = 12;
-            int colLength = 5;
+            string[] substring = tableSize.Split('x');
 
 
-            for (int row =1; row <= rowLength; row++)
+
+            if (int.TryParse(substring[0], out int userRow) & (int.TryParse(substring[1], out int userCol))) 
             {
-                for (int col = 1; col <= colLength; col++)
+                Console.WriteLine($"You have chosen a {userRow}x{userCol} multiplication table.");
+            }
+            else
+            {
+                Console.WriteLine("The inputed value is in an incorrect format.");
+            }
+ 
+            for (int row =1; row <= userRow; row++)
+            {
+                for (int col = 1; col <= userCol; col++)
                 {
                     int product = row * col;
                     Console.Write($"{product,4}");
                 }
                 Console.WriteLine();
             }
-
 
             Console.ReadLine();
 
