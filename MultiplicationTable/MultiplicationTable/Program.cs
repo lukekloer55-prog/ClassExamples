@@ -2,7 +2,7 @@
 Rcet 2265
 Semester Spring 2026
 RCET 2265 - Programming in C#
-Multiplication Table Program
+Convert&Validate Program
 GitHub URL:
 https://github.com/lukekloer55-prog/ClassExamples/tree/simple/MultiplicationTable */
 
