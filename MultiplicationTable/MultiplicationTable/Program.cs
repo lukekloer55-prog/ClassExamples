@@ -4,7 +4,7 @@ Semester Spring 2026
 RCET 2265 - Programming in C#
 Convert&Validate Program
 GitHub URL:
-https://github.com/lukekloer55-prog/ClassExamples/tree/simple/MultiplicationTable */
+https://github.com/lukekloer55-prog/ClassExamples/tree/simple/Convert%26Validate */
 
 
 using System.ComponentModel.Design;
