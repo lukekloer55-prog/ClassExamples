@@ -8,15 +8,25 @@ namespace RollTheDice
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Roll of the Dice");
+            Console.WriteLine("________________________________________");
+            Console.WriteLine();
+            Console.WriteLine("Number of faces: ");
+            Console.WriteLine("________________________________________");
             for (int j = 0; j < 6; j++)
             {
                    
                 int[] diceoptions = { 1, 2, 3, 4, 5, 6 };
 
                 Console.Write(diceoptions[j].ToString().PadLeft(6));
-      
+ 
             }
+
+            Console.WriteLine();
+            Console.WriteLine("________________________________________");
+            Console.WriteLine();
+            Console.WriteLine("Resulting Counts:");
+            Console.WriteLine("________________________________________");
 
             Console.WriteLine();
             int[] rollCount = new int [7];
@@ -36,6 +46,10 @@ namespace RollTheDice
             {
                 Console.Write(rollCount[j].ToString().PadLeft(6));
             }
+
+            Console.WriteLine();
+
+            Console.WriteLine("________________________________________");
 
         }
 
