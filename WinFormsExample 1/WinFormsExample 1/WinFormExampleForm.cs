@@ -20,7 +20,7 @@ namespace WinFormsExample_1
         private void SubmitButton_Click(object sender, EventArgs e)
 
         {
-            this.Text = "Submit button clicked";
+            this.Text = NameTextBox.Text;
         }
 
     }
