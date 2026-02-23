@@ -28,19 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ExitButton = new Button();
+            SubmitButton = new Button();
             SuspendLayout();
             // 
-            // Form1
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(661, 389);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(127, 49);
+            ExitButton.TabIndex = 0;
+            ExitButton.Text = "E&xit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(521, 389);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(134, 48);
+            SubmitButton.TabIndex = 1;
+            SubmitButton.Text = "&Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
+            // 
+            // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Form1";
+            Controls.Add(SubmitButton);
+            Controls.Add(ExitButton);
+            Name = "WinFormExampleForm";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button ExitButton;
+        private Button SubmitButton;
     }
 }
