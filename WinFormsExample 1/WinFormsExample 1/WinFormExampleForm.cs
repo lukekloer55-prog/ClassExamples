@@ -23,5 +23,9 @@ namespace WinFormsExample_1
             this.Text = NameTextBox.Text;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
