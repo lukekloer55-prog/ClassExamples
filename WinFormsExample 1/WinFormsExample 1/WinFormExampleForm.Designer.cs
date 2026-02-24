@@ -40,8 +40,6 @@
             PhoneLabel = new Label();
             ClearButton = new Button();
             UserInputBox = new GroupBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
             groupBox1 = new GroupBox();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -49,6 +47,9 @@
             checkBox3 = new CheckBox();
             checkBox4 = new CheckBox();
             groupBox2 = new GroupBox();
+            ReverseRadio = new RadioButton();
+            LowerCaseRadio = new RadioButton();
+            UpperCaseRadio = new RadioButton();
             UserInputBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -151,6 +152,7 @@
             ClearButton.TabIndex = 5;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // UserInputBox
             // 
@@ -169,26 +171,6 @@
             UserInputBox.TabStop = false;
             UserInputBox.Text = "UserInput";
             UserInputBox.Enter += groupBox1_Enter;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(62, 291);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(62, 321);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(101, 24);
-            checkBox2.TabIndex = 7;
-            checkBox2.Text = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -269,18 +251,52 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
             // 
+            // ReverseRadio
+            // 
+            ReverseRadio.AutoSize = true;
+            ReverseRadio.Location = new Point(27, 302);
+            ReverseRadio.Name = "ReverseRadio";
+            ReverseRadio.Size = new Size(81, 24);
+            ReverseRadio.TabIndex = 11;
+            ReverseRadio.TabStop = true;
+            ReverseRadio.Text = "Reverse";
+            ReverseRadio.UseVisualStyleBackColor = true;
+            // 
+            // LowerCaseRadio
+            // 
+            LowerCaseRadio.AutoSize = true;
+            LowerCaseRadio.Location = new Point(27, 272);
+            LowerCaseRadio.Name = "LowerCaseRadio";
+            LowerCaseRadio.Size = new Size(70, 24);
+            LowerCaseRadio.TabIndex = 10;
+            LowerCaseRadio.TabStop = true;
+            LowerCaseRadio.Text = "Lower";
+            LowerCaseRadio.UseVisualStyleBackColor = true;
+            // 
+            // UpperCaseRadio
+            // 
+            UpperCaseRadio.AutoSize = true;
+            UpperCaseRadio.Location = new Point(27, 242);
+            UpperCaseRadio.Name = "UpperCaseRadio";
+            UpperCaseRadio.Size = new Size(71, 24);
+            UpperCaseRadio.TabIndex = 9;
+            UpperCaseRadio.TabStop = true;
+            UpperCaseRadio.Text = "Upper";
+            UpperCaseRadio.UseVisualStyleBackColor = true;
+            UpperCaseRadio.CheckedChanged += radioButton6_CheckedChanged;
+            // 
             // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ReverseRadio);
+            Controls.Add(LowerCaseRadio);
+            Controls.Add(UpperCaseRadio);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
             Controls.Add(UserInputBox);
             Name = "WinFormExampleForm";
-            Load += Form1_Load;
             UserInputBox.ResumeLayout(false);
             UserInputBox.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -304,8 +320,6 @@
         private Label PhoneLabel;
         private Button ClearButton;
         private GroupBox UserInputBox;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
         private GroupBox groupBox1;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
@@ -313,5 +327,8 @@
         private CheckBox checkBox3;
         private CheckBox checkBox4;
         private GroupBox groupBox2;
+        private RadioButton ReverseRadio;
+        private RadioButton LowerCaseRadio;
+        private RadioButton UpperCaseRadio;
     }
 }
