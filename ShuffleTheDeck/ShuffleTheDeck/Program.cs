@@ -4,6 +4,8 @@
 //Shuffle the deck when there are no more cards left or anytime the user chooses.
 //Remember to include the standard program information header in your code.
 
+using System.Security.Cryptography;
+
 namespace ShuffleTheDeck
 {
     internal class Program
@@ -15,6 +17,16 @@ namespace ShuffleTheDeck
 
         static void drawCard()
         {
+           
+
+            for (int i = 0; i < 12; i++)
+
+            {
+                for (int j = 0; j < 3; j++) ;
+                Random card = new Random(0,4);
+            }
+
+            return card;
         }
     }
 }
