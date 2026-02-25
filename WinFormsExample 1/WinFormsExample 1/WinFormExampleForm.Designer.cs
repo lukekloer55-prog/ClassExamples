@@ -91,6 +91,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(209, 27);
             NameTextBox.TabIndex = 0;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // AgeTextBox
             // 
@@ -283,7 +284,7 @@
             UpperCaseRadio.TabStop = true;
             UpperCaseRadio.Text = "Upper";
             UpperCaseRadio.UseVisualStyleBackColor = true;
-            UpperCaseRadio.CheckedChanged += radioButton6_CheckedChanged;
+            
             // 
             // WinFormExampleForm
             // 
