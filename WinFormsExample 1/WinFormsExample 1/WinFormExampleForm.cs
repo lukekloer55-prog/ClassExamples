@@ -15,7 +15,8 @@ namespace WinFormsExample_1
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.Text = NameTextBox.Text;
+            ValidateFields();
+            //this.Text = NameTextBox.Text;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -41,6 +42,42 @@ namespace WinFormsExample_1
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void ValidateFields ()
+        {
+
+            string message = "";
+
+            if (CityTextBox.Text == "")
+            {
+                message = "City is required\n" + message;
+                CityTextBox.Focus();
+            }
+
+            if (PhoneTextBox.Text == "")
+            {
+                message = "Phone is required\n" + message;
+                PhoneTextBox.Focus();
+            }
+
+            if (AgeTextBox.Text == "")
+            {
+                message = "Age is required\n" + message;
+                AgeTextBox.Focus();
+            }
+
+            if (NameTextBox.Text == "")
+            {
+               message = "Name is required\n" + message;
+               NameTextBox.Focus();
+            }
+
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
 
         }
     }
