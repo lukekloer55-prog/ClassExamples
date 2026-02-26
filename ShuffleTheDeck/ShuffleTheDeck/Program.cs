@@ -16,10 +16,10 @@ namespace ShuffleTheDeck
         static void Main(string[] args)
 
         {
-            int[,] Cardarray = CardArray();
-            GetCard();
-            Console.WriteLine(Cardarray[1, 3]);
+            var (suit, cardNumber) = GetCard();
             
+            Console.WriteLine(suit);
+            Console.WriteLine(cardNumber);
         }
 
         static int[,] CardArray()
@@ -28,13 +28,12 @@ namespace ShuffleTheDeck
             return Cardarray;
         }
 
-        static void GetCard()
+        static (int Suit, int cardNumber) GetCard()
         {
             Random rnd = new Random();
             int suit = rnd.Next(0,3);
             int cardNumber = rnd.Next(0,12);
-            Console.WriteLine("Your card is: " + suit + cardNumber);
-            return 
+            return (suit, cardNumber);
         }
     }
 }
