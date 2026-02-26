@@ -15,7 +15,10 @@ namespace WinFormsExample_1
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            ValidateFields();
+            if (ValidateFields())
+            {
+
+            }
             //this.Text = NameTextBox.Text;
         }
 
@@ -41,8 +44,9 @@ namespace WinFormsExample_1
             SubmitButton.Enabled = false;
         }
 
-        private void ValidateFields ()
+        private bool ValidateFields ()
         {
+            bool valid = true;
             string message = "";
             if (CityTextBox.Text == "")
             {
@@ -66,8 +70,10 @@ namespace WinFormsExample_1
             }
             if (message != "")
             {
+                valid = false;
                 MessageBox.Show(message);
             }
+            return valid;
         }
 
         private void NameTextBox_TextChanged(Object sender, EventArgs e)
