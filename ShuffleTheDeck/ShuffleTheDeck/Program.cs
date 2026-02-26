@@ -17,15 +17,27 @@ namespace ShuffleTheDeck
 
         {
             var (suit, cardNumber) = GetCard();
-            
-            Console.WriteLine(suit);
-            Console.WriteLine(cardNumber);
+            int[,] Cards = CardArray();
+            Console.WriteLine(Cards[suit, cardNumber]);
+
+
+            //Console.WriteLine(suit);
+            //Console.WriteLine(cardNumber);
         }
 
         static int[,] CardArray()
         {
-            int[,] Cardarray = new int[4, 13];
-            return Cardarray;
+            int[,] cards = new int[4,12];
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 12; j++)
+                {
+                    cards[i,j] = i+j*12;
+                }
+            }
+
+            return cards;
         }
 
         static (int Suit, int cardNumber) GetCard()

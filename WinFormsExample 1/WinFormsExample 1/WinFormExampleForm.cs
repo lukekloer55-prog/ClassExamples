@@ -38,6 +38,7 @@ namespace WinFormsExample_1
             CityTextBox.Text = "";
             PhoneTextBox.Text = "";
             UpperCaseRadio.Checked = true;
+            SubmitButton.Enabled = false;
         }
 
         private void ValidateFields ()
@@ -74,11 +75,13 @@ namespace WinFormsExample_1
             if (NameTextBox.Text != "")
             {
                 NameTextBox.BackColor = Color.White;
+                SubmitButton.Enabled = true;
             }
 
             else
             { 
                 NameTextBox.BackColor = Color.LightYellow; 
+                SubmitButton.Enabled = false;
             }
 
         }
