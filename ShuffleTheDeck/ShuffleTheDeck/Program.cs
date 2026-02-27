@@ -40,6 +40,19 @@ namespace ShuffleTheDeck
             return cards;
         }
 
+        static bool[,] Cards()
+        {
+            bool[,] cards = new bool[4, 12];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 12; j++)
+                {
+                    cards[i,j] = false;
+                }
+            }
+            return cards;
+        }
+
         static (int Suit, int cardNumber) GetCard()
         {
             Random rnd = new Random();
