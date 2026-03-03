@@ -35,63 +35,94 @@ namespace WinFormsExample_1
         private void SetDefaults()
         {
 
-            NameTextBox.Text = "";
-            NameTextBox.BackColor = Color.LightYellow;
-            AgeTextBox.Text = "";
+            FirstNameTextBox.Text = "";
+            //NameTextBox.BackColor = Color.LightYellow;
+            LastNameTextBox.Text = "";
+            AddressTextBox.Text = "";
             CityTextBox.Text = "";
-            PhoneTextBox.Text = "";
-            UpperCaseRadio.Checked = true;
+            StateTextBox.Text = "";
+            ZipCodeBox.Text = "";
+            FinalAddressLabel.Text = "";
             SubmitButton.Enabled = false;
         }
 
-        private bool ValidateFields ()
+        private bool ValidateFields()
         {
             bool valid = true;
             string message = "";
+
+            if (ZipCodeBox.Text == "")
+            {
+                message = "Zip Code is required\n" + message;
+                ZipCodeBox.Focus();
+            }
+            if (StateTextBox.Text == "")
+            {
+                message = "State is required\n" + message;
+                StateTextBox.Focus();
+            }
             if (CityTextBox.Text == "")
             {
                 message = "City is required\n" + message;
                 CityTextBox.Focus();
             }
-            if (PhoneTextBox.Text == "")
+            if (AddressTextBox.Text == "")
             {
-                message = "Phone is required\n" + message;
-                PhoneTextBox.Focus();
+                message = "Address is required\n" + message;
+                AddressTextBox.Focus();
             }
-            if (AgeTextBox.Text == "")
+            if (LastNameTextBox.Text == "")
             {
-                message = "Age is required\n" + message;
-                AgeTextBox.Focus();
+                message = "LastName is required\n" + message;
+                LastNameTextBox.Focus();
             }
-            if (NameTextBox.Text == "")
+            if (FirstNameTextBox.Text == "")
             {
-               message = "Name is required\n" + message;
-               NameTextBox.Focus();
+                message = "FirstName is required\n" + message;
+                FirstNameTextBox.Focus();
             }
             if (message != "")
             {
                 valid = false;
                 MessageBox.Show(message);
             }
+            if (valid == true)
+            {
+                FinalAddressLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n{AddressTextBox.Text}\n{CityTextBox.Text}, {StateTextBox.Text} {ZipCodeBox.Text}";
+            }
             return valid;
+
         }
 
         private void NameTextBox_TextChanged(Object sender, EventArgs e)
         {
-            if (NameTextBox.Text != "")
+            if (FirstNameTextBox.Text != "")
             {
-                NameTextBox.BackColor = Color.White;
+                FirstNameTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
             }
 
             else
-            { 
-                NameTextBox.BackColor = Color.LightYellow; 
+            {
+                FirstNameTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
             }
 
         }
 
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void AgeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
