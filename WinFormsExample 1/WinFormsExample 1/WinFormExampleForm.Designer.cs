@@ -223,9 +223,10 @@
             // 
             // FinalAddressLabel
             // 
-            FinalAddressLabel.Location = new Point(394, 24);
+            FinalAddressLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FinalAddressLabel.Location = new Point(394, 12);
             FinalAddressLabel.Name = "FinalAddressLabel";
-            FinalAddressLabel.Size = new Size(381, 318);
+            FinalAddressLabel.Size = new Size(381, 330);
             FinalAddressLabel.TabIndex = 9;
             FinalAddressLabel.Text = "label1";
             // 
