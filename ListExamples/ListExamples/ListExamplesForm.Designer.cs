@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            ExitButton = new Button();
+            SuspendLayout();
+            // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(626, 361);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(162, 78);
+            ExitButton.TabIndex = 0;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // ListExamplesForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ExitButton);
+            Name = "ListExamplesForm";
             Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button ExitButton;
     }
 }
