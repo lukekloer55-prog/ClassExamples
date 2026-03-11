@@ -32,15 +32,15 @@
             ClearButton = new Button();
             SubmitButton = new Button();
             FirstNameLabel = new Label();
-            FirstNameTextBox1 = new TextBox();
+            FirstNameTextBox = new TextBox();
             InputGroupBox = new GroupBox();
             CompanyTextBox = new TextBox();
             ComapnyLabel = new Label();
             LastNameTextBox = new TextBox();
             LastNameLabel = new Label();
             OutputGroupBox = new GroupBox();
-            listBox1 = new ListBox();
-            comboBox1 = new ComboBox();
+            DisplayListBox = new ListBox();
+            SelectionComboBox = new ComboBox();
             InputGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             SuspendLayout();
@@ -84,12 +84,12 @@
             FirstNameLabel.TabIndex = 3;
             FirstNameLabel.Text = "First";
             // 
-            // FirstNameTextBox1
+            // FirstNameTextBox
             // 
-            FirstNameTextBox1.Location = new Point(121, 26);
-            FirstNameTextBox1.Name = "FirstNameTextBox1";
-            FirstNameTextBox1.Size = new Size(125, 27);
-            FirstNameTextBox1.TabIndex = 4;
+            FirstNameTextBox.Location = new Point(121, 26);
+            FirstNameTextBox.Name = "FirstNameTextBox";
+            FirstNameTextBox.Size = new Size(125, 27);
+            FirstNameTextBox.TabIndex = 4;
             // 
             // InputGroupBox
             // 
@@ -97,7 +97,7 @@
             InputGroupBox.Controls.Add(ComapnyLabel);
             InputGroupBox.Controls.Add(LastNameTextBox);
             InputGroupBox.Controls.Add(LastNameLabel);
-            InputGroupBox.Controls.Add(FirstNameTextBox1);
+            InputGroupBox.Controls.Add(FirstNameTextBox);
             InputGroupBox.Controls.Add(FirstNameLabel);
             InputGroupBox.Location = new Point(12, 12);
             InputGroupBox.Name = "InputGroupBox";
@@ -139,30 +139,31 @@
             // 
             // OutputGroupBox
             // 
-            OutputGroupBox.Controls.Add(listBox1);
-            OutputGroupBox.Controls.Add(comboBox1);
+            OutputGroupBox.Controls.Add(DisplayListBox);
+            OutputGroupBox.Controls.Add(SelectionComboBox);
             OutputGroupBox.Location = new Point(327, 12);
             OutputGroupBox.Name = "OutputGroupBox";
             OutputGroupBox.Size = new Size(461, 373);
             OutputGroupBox.TabIndex = 2;
             OutputGroupBox.TabStop = false;
             // 
-            // listBox1
+            // DisplayListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(15, 73);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(437, 284);
-            listBox1.TabIndex = 1;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            DisplayListBox.FormattingEnabled = true;
+            DisplayListBox.Location = new Point(15, 73);
+            DisplayListBox.Name = "DisplayListBox";
+            DisplayListBox.Size = new Size(437, 284);
+            DisplayListBox.TabIndex = 1;
+            DisplayListBox.SelectedIndexChanged += DisplayListBox_SelectedIndexChanged;
             // 
-            // comboBox1
+            // SelectionComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(108, 28);
-            comboBox1.TabIndex = 0;
+            SelectionComboBox.FormattingEnabled = true;
+            SelectionComboBox.Location = new Point(15, 21);
+            SelectionComboBox.Name = "SelectionComboBox";
+            SelectionComboBox.Size = new Size(108, 28);
+            SelectionComboBox.TabIndex = 0;
+            SelectionComboBox.SelectedIndexChanged += SelectionComboBox_SelectedIndexChanged;
             // 
             // ListExamplesForm
             // 
@@ -188,14 +189,14 @@
         private Button ClearButton;
         private Button SubmitButton;
         private Label FirstNameLabel;
-        private TextBox FirstNameTextBox1;
+        private TextBox FirstNameTextBox;
         private GroupBox InputGroupBox;
         private TextBox CompanyTextBox;
         private Label ComapnyLabel;
         private TextBox LastNameTextBox;
         private Label LastNameLabel;
         private GroupBox OutputGroupBox;
-        private ListBox listBox1;
-        private ComboBox comboBox1;
+        private ListBox DisplayListBox;
+        private ComboBox SelectionComboBox;
     }
 }

@@ -18,6 +18,22 @@ namespace ListExamples
             names.Add("Jack");
             this.Text = names.Count.ToString();
         }
+
+        void AddItemToListBox()
+        {
+            DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
+        }
+
+        void AddItemToComboBox()
+        {
+            SelectionComboBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
+
+            if (SelectionComboBox.Items.Count > 0)
+            {
+                SelectionComboBox.SelectedIndex = 0;
+            }
+        }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -25,17 +41,29 @@ namespace ListExamples
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            ListExamplesForm_Load(sender, e);
+            //ListExamplesForm_Load(sender, e);
+            AddItemToListBox();
+            AddItemToComboBox();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            DisplayListBox.Items.Clear();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string[] temp = DisplayListBox.SelectedItem.ToString().Split(" ");
+            CompanyTextBox.Text = temp[1];
+            temp = temp[0].Split(",");
+            FirstNameTextBox.Text = temp[1];
+            LastNameTextBox.Text = temp[0];
+            //this.Text = DisplayListBox.SelectedIndex.ToString();   
+        }
 
+        private void SelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayListBox.SelectedIndex = SelectionComboBox.SelectedIndex;
         }
     }
 }
