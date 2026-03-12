@@ -47,14 +47,20 @@ namespace ListExamples
             //ListExamplesForm_Load(sender, e);
             AddItemToListBox();
             AddItemToComboBox();
+            Startup();
+        }
+
+        private void Startup()
+        {
+            FirstNameTextBox.Text = "";
+            LastNameTextBox.Text = "";
+            CompanyTextBox.Text = "";
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
             DisplayListBox.Items.Clear();
-            FirstNameTextBox.Text = "";
-            LastNameTextBox.Text = "";
-            CompanyTextBox.Text = "";
+            Startup();
         }
 
         private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
