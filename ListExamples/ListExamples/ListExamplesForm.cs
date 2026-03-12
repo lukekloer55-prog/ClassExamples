@@ -6,7 +6,10 @@ namespace ListExamples
     {
         public ListExamplesForm()
         {
-            InitializeComponent();
+            
+            InitializeComponent();  
+
+            
         }
         //Custom Methods below here
 
@@ -49,6 +52,9 @@ namespace ListExamples
         private void ClearButton_Click(object sender, EventArgs e)
         {
             DisplayListBox.Items.Clear();
+            FirstNameTextBox.Text = "";
+            LastNameTextBox.Text = "";
+            CompanyTextBox.Text = "";
         }
 
         private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,6 +70,58 @@ namespace ListExamples
         private void SelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayListBox.SelectedIndex = SelectionComboBox.SelectedIndex;
+        }
+
+        void Validation(object sender, EventArgs e) 
+        {
+            bool valid = false;
+
+            if (FirstNameTextBox.Text != "")
+            {
+                FirstNameTextBox.BackColor = Color.White;
+                valid = true;
+            }
+
+            else
+            {  
+                FirstNameTextBox.BackColor = Color.LightYellow;
+                valid = false;
+            }
+
+            if (LastNameTextBox.Text != "")
+            {
+                LastNameTextBox.BackColor = Color.White;
+                valid = true;
+            }
+
+            else
+            {
+                LastNameTextBox.BackColor = Color.LightYellow;
+                valid = false;
+            }
+
+            if (CompanyTextBox.Text != "")
+            {
+                CompanyTextBox.BackColor = Color.White;
+                valid = true;
+            }
+
+            else
+            {
+                CompanyTextBox.BackColor = Color.LightYellow;
+                valid = false;
+            }
+
+            if (valid == false)
+            {
+                SubmitButton.Enabled = false;
+            }
+
+            else
+            { 
+                SubmitButton.Enabled = true;
+            }
+
         }
     }
 }

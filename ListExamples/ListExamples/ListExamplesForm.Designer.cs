@@ -90,6 +90,7 @@
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(125, 27);
             FirstNameTextBox.TabIndex = 4;
+            FirstNameTextBox.TextChanged += Validation;
             // 
             // InputGroupBox
             // 
@@ -111,6 +112,7 @@
             CompanyTextBox.Name = "CompanyTextBox";
             CompanyTextBox.Size = new Size(125, 27);
             CompanyTextBox.TabIndex = 8;
+            CompanyTextBox.TextChanged += Validation;
             // 
             // ComapnyLabel
             // 
@@ -120,6 +122,7 @@
             ComapnyLabel.Size = new Size(72, 20);
             ComapnyLabel.TabIndex = 7;
             ComapnyLabel.Text = "Company";
+            
             // 
             // LastNameTextBox
             // 
@@ -127,6 +130,7 @@
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(125, 27);
             LastNameTextBox.TabIndex = 6;
+            LastNameTextBox.TextChanged += Validation;
             // 
             // LastNameLabel
             // 
@@ -181,6 +185,11 @@
             InputGroupBox.PerformLayout();
             OutputGroupBox.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        private void CompanyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
