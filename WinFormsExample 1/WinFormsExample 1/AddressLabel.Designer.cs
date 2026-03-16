@@ -1,6 +1,6 @@
 ﻿namespace WinFormsExample_1
 {
-    partial class WinFormExampleForm
+    partial class AddressLabel
     {
         /// <summary>
         ///  Required designer variable.
@@ -83,7 +83,7 @@
             FirstNameLabel.Size = new Size(64, 15);
             FirstNameLabel.TabIndex = 2;
             FirstNameLabel.Text = "First Name";
-            FirstNameLabel.Click += NameLabel_Click;
+           
             // 
             // FirstNameTextBox
             // 
@@ -112,7 +112,7 @@
             LastNameLabel.Size = new Size(63, 15);
             LastNameLabel.TabIndex = 4;
             LastNameLabel.Text = "Last Name";
-            LastNameLabel.Click += AgeLabel_Click;
+            
             // 
             // CityTextBox
             // 
@@ -121,7 +121,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(247, 23);
             CityTextBox.TabIndex = 3;
-            CityTextBox.TextChanged += CityTextBox_TextChanged;
+            
             // 
             // CityLabel
             // 
@@ -150,7 +150,7 @@
             StreetAddressLabel.Size = new Size(82, 15);
             StreetAddressLabel.TabIndex = 8;
             StreetAddressLabel.Text = "Street Address";
-            StreetAddressLabel.Click += PhoneLabel_Click;
+            
             // 
             // ClearButton
             // 
@@ -212,7 +212,7 @@
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(111, 23);
             StateTextBox.TabIndex = 9;
-            StateTextBox.TextChanged += StateTextBox_TextChanged;
+            
             // 
             // StateLabel
             // 

@@ -1,8 +1,8 @@
 namespace WinFormsExample_1
 {
-    public partial class WinFormExampleForm : Form
+    public partial class AddressLabel : Form
     {
-        public WinFormExampleForm()
+        public AddressLabel()
         {
             InitializeComponent();
             SetDefaults();
