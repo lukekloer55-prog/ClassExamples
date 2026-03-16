@@ -34,7 +34,6 @@ namespace WinFormsExample_1
 
         private void SetDefaults()
         {
-
             FirstNameTextBox.Text = "";
             //NameTextBox.BackColor = Color.LightYellow;
             LastNameTextBox.Text = "";
@@ -43,7 +42,7 @@ namespace WinFormsExample_1
             StateTextBox.Text = "";
             ZipCodeBox.Text = "";
             FinalAddressLabel.Text = "";
-            SubmitButton.Enabled = false;
+            DisplayLabelButton.Enabled = false;
         }
 
         private bool ValidateFields()
@@ -99,29 +98,14 @@ namespace WinFormsExample_1
             if (FirstNameTextBox.Text != "")
             {
                 FirstNameTextBox.BackColor = Color.White;
-                SubmitButton.Enabled = true;
+                DisplayLabelButton.Enabled = true;
             }
 
             else
             {
                 FirstNameTextBox.BackColor = Color.LightYellow;
-                SubmitButton.Enabled = false;
+                DisplayLabelButton.Enabled = false;
             }
-
-        }
-
-        private void NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AgeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PhoneLabel_Click(object sender, EventArgs e)
-        {
 
         }
     }
