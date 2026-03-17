@@ -122,7 +122,6 @@
             ComapnyLabel.Size = new Size(72, 20);
             ComapnyLabel.TabIndex = 7;
             ComapnyLabel.Text = "Company";
-            
             // 
             // LastNameTextBox
             // 
@@ -153,6 +152,7 @@
             // 
             // DisplayListBox
             // 
+            DisplayListBox.Font = new Font("Cascadia Mono", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
             DisplayListBox.Location = new Point(15, 73);
             DisplayListBox.Name = "DisplayListBox";
