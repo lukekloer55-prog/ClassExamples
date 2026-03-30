@@ -1,6 +1,6 @@
 ﻿namespace DinnerMenu
 {
-    partial class Form1
+    partial class DinnerMenu
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,78 +33,95 @@
             SaladButton = new Button();
             FishButton = new Button();
             ExitButton = new Button();
-            SpecialDisplayLabel = new Label();
+            ItemDisplayLabel = new Label();
+            DescItemLabel = new Label();
             SuspendLayout();
             // 
             // MainMenuLabel
             // 
             MainMenuLabel.AutoSize = true;
-            MainMenuLabel.Font = new Font("Vivaldi", 25.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            MainMenuLabel.Location = new Point(241, 9);
+            MainMenuLabel.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            MainMenuLabel.Location = new Point(211, 7);
             MainMenuLabel.Name = "MainMenuLabel";
-            MainMenuLabel.Size = new Size(255, 53);
+            MainMenuLabel.Size = new Size(214, 39);
             MainMenuLabel.TabIndex = 0;
             MainMenuLabel.Text = "Dinner Menu";
-            MainMenuLabel.Click += label1_Click;
             // 
             // SoupButton
             // 
-            SoupButton.Location = new Point(12, 357);
+            SoupButton.Location = new Point(10, 268);
+            SoupButton.Margin = new Padding(3, 2, 3, 2);
             SoupButton.Name = "SoupButton";
-            SoupButton.Size = new Size(183, 81);
+            SoupButton.Size = new Size(160, 61);
             SoupButton.TabIndex = 1;
             SoupButton.Text = "Soup";
             SoupButton.UseVisualStyleBackColor = true;
+            SoupButton.Click += SoupButton_Click;
             // 
             // SaladButton
             // 
-            SaladButton.Location = new Point(201, 357);
+            SaladButton.Location = new Point(176, 268);
+            SaladButton.Margin = new Padding(3, 2, 3, 2);
             SaladButton.Name = "SaladButton";
-            SaladButton.Size = new Size(183, 81);
+            SaladButton.Size = new Size(160, 61);
             SaladButton.TabIndex = 2;
             SaladButton.Text = "Salad";
             SaladButton.UseVisualStyleBackColor = true;
+            SaladButton.Click += SaladButton_Click;
             // 
             // FishButton
             // 
-            FishButton.Location = new Point(390, 357);
+            FishButton.Location = new Point(341, 268);
+            FishButton.Margin = new Padding(3, 2, 3, 2);
             FishButton.Name = "FishButton";
-            FishButton.Size = new Size(183, 81);
+            FishButton.Size = new Size(160, 61);
             FishButton.TabIndex = 3;
             FishButton.Text = "Fish";
             FishButton.UseVisualStyleBackColor = true;
+            FishButton.Click += FishButton_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(605, 357);
+            ExitButton.Location = new Point(529, 268);
+            ExitButton.Margin = new Padding(3, 2, 3, 2);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(183, 81);
+            ExitButton.Size = new Size(160, 61);
             ExitButton.TabIndex = 4;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
-            // SpecialDisplayLabel
+            // ItemDisplayLabel
             // 
-            SpecialDisplayLabel.AutoSize = true;
-            SpecialDisplayLabel.Location = new Point(355, 183);
-            SpecialDisplayLabel.Name = "SpecialDisplayLabel";
-            SpecialDisplayLabel.Size = new Size(106, 20);
-            SpecialDisplayLabel.TabIndex = 5;
-            SpecialDisplayLabel.Text = "SpecialDisplay";
-            SpecialDisplayLabel.Click += label1_Click_1;
+            ItemDisplayLabel.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ItemDisplayLabel.Location = new Point(211, 82);
+            ItemDisplayLabel.Name = "ItemDisplayLabel";
+            ItemDisplayLabel.Size = new Size(214, 27);
+            ItemDisplayLabel.TabIndex = 5;
+            ItemDisplayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // DescItemLabel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            DescItemLabel.Font = new Font("Sitka Banner", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DescItemLabel.Location = new Point(190, 109);
+            DescItemLabel.Name = "DescItemLabel";
+            DescItemLabel.Size = new Size(283, 134);
+            DescItemLabel.TabIndex = 6;
+            // 
+            // DinnerMenu
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(SpecialDisplayLabel);
+            ClientSize = new Size(700, 338);
+            Controls.Add(DescItemLabel);
+            Controls.Add(ItemDisplayLabel);
             Controls.Add(ExitButton);
             Controls.Add(FishButton);
             Controls.Add(SaladButton);
             Controls.Add(SoupButton);
             Controls.Add(MainMenuLabel);
-            Name = "Form1";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "DinnerMenu";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -117,6 +134,7 @@
         private Button SaladButton;
         private Button FishButton;
         private Button ExitButton;
-        private Label SpecialDisplayLabel;
+        private Label ItemDisplayLabel;
+        private Label DescItemLabel;
     }
 }
