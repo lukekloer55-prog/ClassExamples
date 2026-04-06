@@ -1,3 +1,13 @@
+/*Luke Kloer
+Rcet 2265
+Semester Spring 2026
+RCET 2265 - Programming in C#
+RollOfTheDiceListBox Program
+GitHub URL:
+https://github.com/lukekloer55-prog/ClassExamples/tree/main/RollTheDiceListBox */
+
+
+
 namespace RollTheDiceListBox
 {
     public partial class RollOfTheDice : Form
@@ -16,6 +26,7 @@ namespace RollTheDiceListBox
             ResultsListBox.Items.Add("________________________________________");
             ResultsListBox.Items.Add("Number of faces: ");
             ResultsListBox.Items.Add("________________________________________");
+            // The above lines add headers and separators to the ListBox to organize the display of the results.
 
             for (int j = 0; j < 6; j++)
             {
@@ -45,9 +56,11 @@ namespace RollTheDiceListBox
             {
                 currentLine += (rollCount[j].ToString().PadLeft(6));
                 // Writes the count of occurrences for each face of the die, formatted to align with the numbers above.
+                // currentLine is a string that accumulates the counts of each face of the die, formatted to align with the numbers above. It uses PadLeft to ensure proper spacing in the display.
             }
 
             ResultsListBox.Items.Add(currentLine);
+            //Items.Add is a method that adds the specified item to the end of the ListBox. In this case, it adds the currentLine string, which contains the counts of each face of the die, to the ListBox for display.
             ResultsListBox.Items.Add("________________________________________");
             
         }
@@ -67,16 +80,19 @@ namespace RollTheDiceListBox
         private void ClearButton_Click(object sender, EventArgs e)
         {
             SetDefaults();
+            // Clears the ListBox and resets the display to its default state.
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            // Closes the form, effectively exiting the application when the Exit button is clicked.
         }
 
         private void SetDefaults()
         {
             ResultsListBox.Items.Clear();
+            // Resets the ListBox to its default state by clearing all items and adding the initial lines that describe the roll of the dice.
         }
-}
+    }
 }
