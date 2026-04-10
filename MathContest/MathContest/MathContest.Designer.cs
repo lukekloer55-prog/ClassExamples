@@ -37,7 +37,7 @@
             NameTextBox = new TextBox();
             CurrentProblemGroupBox = new GroupBox();
             StudentAnswerLabel = new Label();
-            StudentTextBox = new TextBox();
+            StudentAnswerTextBox = new TextBox();
             SecondNumberLabel = new Label();
             SecondNumberTextBox = new TextBox();
             FirstNumberLabel = new Label();
@@ -127,7 +127,7 @@
             // CurrentProblemGroupBox
             // 
             CurrentProblemGroupBox.Controls.Add(StudentAnswerLabel);
-            CurrentProblemGroupBox.Controls.Add(StudentTextBox);
+            CurrentProblemGroupBox.Controls.Add(StudentAnswerTextBox);
             CurrentProblemGroupBox.Controls.Add(SecondNumberLabel);
             CurrentProblemGroupBox.Controls.Add(SecondNumberTextBox);
             CurrentProblemGroupBox.Controls.Add(FirstNumberLabel);
@@ -138,7 +138,6 @@
             CurrentProblemGroupBox.TabIndex = 1;
             CurrentProblemGroupBox.TabStop = false;
             CurrentProblemGroupBox.Text = "Current Math Problem";
-            
             // 
             // StudentAnswerLabel
             // 
@@ -149,12 +148,12 @@
             StudentAnswerLabel.TabIndex = 3;
             StudentAnswerLabel.Text = "Student Answer";
             // 
-            // StudentTextBox
+            // StudentAnswerTextBox
             // 
-            StudentTextBox.Location = new Point(6, 185);
-            StudentTextBox.Name = "StudentTextBox";
-            StudentTextBox.Size = new Size(216, 27);
-            StudentTextBox.TabIndex = 4;
+            StudentAnswerTextBox.Location = new Point(6, 185);
+            StudentAnswerTextBox.Name = "StudentAnswerTextBox";
+            StudentAnswerTextBox.Size = new Size(216, 27);
+            StudentAnswerTextBox.TabIndex = 4;
             // 
             // SecondNumberLabel
             // 
@@ -211,6 +210,7 @@
             DivideRadioButton.TabStop = true;
             DivideRadioButton.Text = "Divide";
             DivideRadioButton.UseVisualStyleBackColor = true;
+            DivideRadioButton.CheckedChanged += DivideRadioButton_CheckedChanged;
             // 
             // MultiplyRadioButton
             // 
@@ -222,6 +222,7 @@
             MultiplyRadioButton.TabStop = true;
             MultiplyRadioButton.Text = "Multiply";
             MultiplyRadioButton.UseVisualStyleBackColor = true;
+            MultiplyRadioButton.CheckedChanged += MultiplyRadioButton_CheckedChanged;
             // 
             // SubtractRadioButton
             // 
@@ -233,6 +234,7 @@
             SubtractRadioButton.TabStop = true;
             SubtractRadioButton.Text = "Subtract";
             SubtractRadioButton.UseVisualStyleBackColor = true;
+            SubtractRadioButton.CheckedChanged += SubtractRadioButton_CheckedChanged;
             // 
             // AddRadioButton
             // 
@@ -244,6 +246,7 @@
             AddRadioButton.TabStop = true;
             AddRadioButton.Text = "Add";
             AddRadioButton.UseVisualStyleBackColor = true;
+            AddRadioButton.CheckedChanged += AddRadioButton_CheckedChanged;
             // 
             // ButtonGroupBox
             // 
@@ -326,7 +329,7 @@
         private GroupBox ButtonGroupBox;
         private TextBox FirstNumberTextBox;
         private Label StudentAnswerLabel;
-        private TextBox StudentTextBox;
+        private TextBox StudentAnswerTextBox;
         private Label SecondNumberLabel;
         private TextBox SecondNumberTextBox;
         private Label FirstNumberLabel;
