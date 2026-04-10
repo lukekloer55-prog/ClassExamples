@@ -29,44 +29,58 @@
         private void InitializeComponent()
         {
             StudentInformationGroupBox = new GroupBox();
+            GradeLabel = new Label();
             AgeLabel = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            label1 = new Label();
-            textBox4 = new TextBox();
+            GradeTextBox = new TextBox();
+            AgeTextBox = new TextBox();
+            NameLabel = new Label();
+            NameTextBox = new TextBox();
             CurrentProblemGroupBox = new GroupBox();
             StudentAnswerLabel = new Label();
-            textBox3 = new TextBox();
+            StudentTextBox = new TextBox();
             SecondNumberLabel = new Label();
-            textBox2 = new TextBox();
+            SecondNumberTextBox = new TextBox();
             FirstNumberLabel = new Label();
-            textBox1 = new TextBox();
+            FirstNumberTextBox = new TextBox();
             MathTypeGroupBox = new GroupBox();
-            ButtonGroupBox = new GroupBox();
-            GradeLabel = new Label();
-            AddRadioButton = new RadioButton();
-            SubtractRadioButton = new RadioButton();
             DivideRadioButton = new RadioButton();
             MultiplyRadioButton = new RadioButton();
+            SubtractRadioButton = new RadioButton();
+            AddRadioButton = new RadioButton();
+            ButtonGroupBox = new GroupBox();
+            ExitButton = new Button();
+            SummaryButton = new Button();
+            ClearButton = new Button();
+            SubmitButton = new Button();
             StudentInformationGroupBox.SuspendLayout();
             CurrentProblemGroupBox.SuspendLayout();
             MathTypeGroupBox.SuspendLayout();
+            ButtonGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // StudentInformationGroupBox
             // 
             StudentInformationGroupBox.Controls.Add(GradeLabel);
             StudentInformationGroupBox.Controls.Add(AgeLabel);
-            StudentInformationGroupBox.Controls.Add(textBox6);
-            StudentInformationGroupBox.Controls.Add(textBox5);
-            StudentInformationGroupBox.Controls.Add(label1);
-            StudentInformationGroupBox.Controls.Add(textBox4);
+            StudentInformationGroupBox.Controls.Add(GradeTextBox);
+            StudentInformationGroupBox.Controls.Add(AgeTextBox);
+            StudentInformationGroupBox.Controls.Add(NameLabel);
+            StudentInformationGroupBox.Controls.Add(NameTextBox);
             StudentInformationGroupBox.Location = new Point(12, 12);
             StudentInformationGroupBox.Name = "StudentInformationGroupBox";
             StudentInformationGroupBox.Size = new Size(456, 112);
             StudentInformationGroupBox.TabIndex = 0;
             StudentInformationGroupBox.TabStop = false;
             StudentInformationGroupBox.Text = "Student Information";
+            // 
+            // GradeLabel
+            // 
+            GradeLabel.AutoSize = true;
+            GradeLabel.Location = new Point(384, 46);
+            GradeLabel.Name = "GradeLabel";
+            GradeLabel.Size = new Size(49, 20);
+            GradeLabel.TabIndex = 9;
+            GradeLabel.Text = "Grade";
             // 
             // AgeLabel
             // 
@@ -77,51 +91,54 @@
             AgeLabel.TabIndex = 8;
             AgeLabel.Text = "Age";
             // 
-            // textBox6
+            // GradeTextBox
             // 
-            textBox6.Location = new Point(385, 69);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(48, 27);
-            textBox6.TabIndex = 7;
+            GradeTextBox.Location = new Point(385, 69);
+            GradeTextBox.Name = "GradeTextBox";
+            GradeTextBox.Size = new Size(48, 27);
+            GradeTextBox.TabIndex = 7;
+            GradeTextBox.TextChanged += GradeTextBox_TextChanged;
             // 
-            // textBox5
+            // AgeTextBox
             // 
-            textBox5.Location = new Point(314, 69);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(36, 27);
-            textBox5.TabIndex = 6;
+            AgeTextBox.Location = new Point(314, 69);
+            AgeTextBox.Name = "AgeTextBox";
+            AgeTextBox.Size = new Size(36, 27);
+            AgeTextBox.TabIndex = 6;
+            AgeTextBox.TextChanged += AgeTextBox_TextChanged;
             // 
-            // label1
+            // NameLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 20);
-            label1.TabIndex = 5;
-            label1.Text = "1st Number";
+            NameLabel.AutoSize = true;
+            NameLabel.Location = new Point(6, 46);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(49, 20);
+            NameLabel.TabIndex = 5;
+            NameLabel.Text = "Name";
             // 
-            // textBox4
+            // NameTextBox
             // 
-            textBox4.Location = new Point(6, 69);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(269, 27);
-            textBox4.TabIndex = 5;
+            NameTextBox.Location = new Point(6, 69);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(269, 27);
+            NameTextBox.TabIndex = 5;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // CurrentProblemGroupBox
             // 
             CurrentProblemGroupBox.Controls.Add(StudentAnswerLabel);
-            CurrentProblemGroupBox.Controls.Add(textBox3);
+            CurrentProblemGroupBox.Controls.Add(StudentTextBox);
             CurrentProblemGroupBox.Controls.Add(SecondNumberLabel);
-            CurrentProblemGroupBox.Controls.Add(textBox2);
+            CurrentProblemGroupBox.Controls.Add(SecondNumberTextBox);
             CurrentProblemGroupBox.Controls.Add(FirstNumberLabel);
-            CurrentProblemGroupBox.Controls.Add(textBox1);
+            CurrentProblemGroupBox.Controls.Add(FirstNumberTextBox);
             CurrentProblemGroupBox.Location = new Point(12, 130);
             CurrentProblemGroupBox.Name = "CurrentProblemGroupBox";
             CurrentProblemGroupBox.Size = new Size(275, 308);
             CurrentProblemGroupBox.TabIndex = 1;
             CurrentProblemGroupBox.TabStop = false;
             CurrentProblemGroupBox.Text = "Current Math Problem";
-            CurrentProblemGroupBox.Enter += CurrentProblemGroupBox_Enter;
+            
             // 
             // StudentAnswerLabel
             // 
@@ -132,12 +149,12 @@
             StudentAnswerLabel.TabIndex = 3;
             StudentAnswerLabel.Text = "Student Answer";
             // 
-            // textBox3
+            // StudentTextBox
             // 
-            textBox3.Location = new Point(6, 185);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(188, 27);
-            textBox3.TabIndex = 4;
+            StudentTextBox.Location = new Point(6, 185);
+            StudentTextBox.Name = "StudentTextBox";
+            StudentTextBox.Size = new Size(216, 27);
+            StudentTextBox.TabIndex = 4;
             // 
             // SecondNumberLabel
             // 
@@ -148,12 +165,12 @@
             SecondNumberLabel.TabIndex = 1;
             SecondNumberLabel.Text = "2nd Number";
             // 
-            // textBox2
+            // SecondNumberTextBox
             // 
-            textBox2.Location = new Point(6, 120);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(188, 27);
-            textBox2.TabIndex = 2;
+            SecondNumberTextBox.Location = new Point(6, 120);
+            SecondNumberTextBox.Name = "SecondNumberTextBox";
+            SecondNumberTextBox.Size = new Size(216, 27);
+            SecondNumberTextBox.TabIndex = 2;
             // 
             // FirstNumberLabel
             // 
@@ -164,12 +181,12 @@
             FirstNumberLabel.TabIndex = 0;
             FirstNumberLabel.Text = "1st Number";
             // 
-            // textBox1
+            // FirstNumberTextBox
             // 
-            textBox1.Location = new Point(6, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(188, 27);
-            textBox1.TabIndex = 0;
+            FirstNumberTextBox.Location = new Point(6, 61);
+            FirstNumberTextBox.Name = "FirstNumberTextBox";
+            FirstNumberTextBox.Size = new Size(216, 27);
+            FirstNumberTextBox.TabIndex = 0;
             // 
             // MathTypeGroupBox
             // 
@@ -183,45 +200,6 @@
             MathTypeGroupBox.TabIndex = 1;
             MathTypeGroupBox.TabStop = false;
             MathTypeGroupBox.Text = "Math Problem Type";
-            // 
-            // ButtonGroupBox
-            // 
-            ButtonGroupBox.Location = new Point(474, 12);
-            ButtonGroupBox.Name = "ButtonGroupBox";
-            ButtonGroupBox.Size = new Size(314, 426);
-            ButtonGroupBox.TabIndex = 2;
-            ButtonGroupBox.TabStop = false;
-            // 
-            // GradeLabel
-            // 
-            GradeLabel.AutoSize = true;
-            GradeLabel.Location = new Point(384, 46);
-            GradeLabel.Name = "GradeLabel";
-            GradeLabel.Size = new Size(49, 20);
-            GradeLabel.TabIndex = 9;
-            GradeLabel.Text = "Grade";
-            // 
-            // AddRadioButton
-            // 
-            AddRadioButton.AutoSize = true;
-            AddRadioButton.Location = new Point(19, 50);
-            AddRadioButton.Name = "AddRadioButton";
-            AddRadioButton.Size = new Size(58, 24);
-            AddRadioButton.TabIndex = 0;
-            AddRadioButton.TabStop = true;
-            AddRadioButton.Text = "Add";
-            AddRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // SubtractRadioButton
-            // 
-            SubtractRadioButton.AutoSize = true;
-            SubtractRadioButton.Location = new Point(19, 80);
-            SubtractRadioButton.Name = "SubtractRadioButton";
-            SubtractRadioButton.Size = new Size(85, 24);
-            SubtractRadioButton.TabIndex = 1;
-            SubtractRadioButton.TabStop = true;
-            SubtractRadioButton.Text = "Subtract";
-            SubtractRadioButton.UseVisualStyleBackColor = true;
             // 
             // DivideRadioButton
             // 
@@ -245,6 +223,80 @@
             MultiplyRadioButton.Text = "Multiply";
             MultiplyRadioButton.UseVisualStyleBackColor = true;
             // 
+            // SubtractRadioButton
+            // 
+            SubtractRadioButton.AutoSize = true;
+            SubtractRadioButton.Location = new Point(19, 80);
+            SubtractRadioButton.Name = "SubtractRadioButton";
+            SubtractRadioButton.Size = new Size(85, 24);
+            SubtractRadioButton.TabIndex = 1;
+            SubtractRadioButton.TabStop = true;
+            SubtractRadioButton.Text = "Subtract";
+            SubtractRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AddRadioButton
+            // 
+            AddRadioButton.AutoSize = true;
+            AddRadioButton.Location = new Point(19, 50);
+            AddRadioButton.Name = "AddRadioButton";
+            AddRadioButton.Size = new Size(58, 24);
+            AddRadioButton.TabIndex = 0;
+            AddRadioButton.TabStop = true;
+            AddRadioButton.Text = "Add";
+            AddRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // ButtonGroupBox
+            // 
+            ButtonGroupBox.Controls.Add(ExitButton);
+            ButtonGroupBox.Controls.Add(SummaryButton);
+            ButtonGroupBox.Controls.Add(ClearButton);
+            ButtonGroupBox.Controls.Add(SubmitButton);
+            ButtonGroupBox.Location = new Point(474, 12);
+            ButtonGroupBox.Name = "ButtonGroupBox";
+            ButtonGroupBox.Size = new Size(314, 426);
+            ButtonGroupBox.TabIndex = 2;
+            ButtonGroupBox.TabStop = false;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(41, 325);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(254, 74);
+            ExitButton.TabIndex = 3;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // SummaryButton
+            // 
+            SummaryButton.Location = new Point(41, 238);
+            SummaryButton.Name = "SummaryButton";
+            SummaryButton.Size = new Size(254, 74);
+            SummaryButton.TabIndex = 2;
+            SummaryButton.Text = "Summary";
+            SummaryButton.UseVisualStyleBackColor = true;
+            SummaryButton.Click += SummaryButton_Click;
+            // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(41, 154);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(254, 74);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(41, 69);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(254, 74);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
+            // 
             // MathContest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -262,6 +314,7 @@
             CurrentProblemGroupBox.PerformLayout();
             MathTypeGroupBox.ResumeLayout(false);
             MathTypeGroupBox.PerformLayout();
+            ButtonGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -271,21 +324,25 @@
         private GroupBox CurrentProblemGroupBox;
         private GroupBox MathTypeGroupBox;
         private GroupBox ButtonGroupBox;
-        private TextBox textBox1;
+        private TextBox FirstNumberTextBox;
         private Label StudentAnswerLabel;
-        private TextBox textBox3;
+        private TextBox StudentTextBox;
         private Label SecondNumberLabel;
-        private TextBox textBox2;
+        private TextBox SecondNumberTextBox;
         private Label FirstNumberLabel;
         private Label AgeLabel;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private Label label1;
-        private TextBox textBox4;
+        private TextBox GradeTextBox;
+        private TextBox AgeTextBox;
+        private Label NameLabel;
+        private TextBox NameTextBox;
         private Label GradeLabel;
         private RadioButton DivideRadioButton;
         private RadioButton MultiplyRadioButton;
         private RadioButton SubtractRadioButton;
         private RadioButton AddRadioButton;
+        private Button ExitButton;
+        private Button SummaryButton;
+        private Button ClearButton;
+        private Button SubmitButton;
     }
 }
