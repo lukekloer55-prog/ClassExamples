@@ -96,7 +96,7 @@
             GradeTextBox.Location = new Point(385, 69);
             GradeTextBox.Name = "GradeTextBox";
             GradeTextBox.Size = new Size(48, 27);
-            GradeTextBox.TabIndex = 7;
+            GradeTextBox.TabIndex = 3;
             GradeTextBox.TextChanged += GradeTextBox_TextChanged;
             // 
             // AgeTextBox
@@ -104,7 +104,7 @@
             AgeTextBox.Location = new Point(314, 69);
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(36, 27);
-            AgeTextBox.TabIndex = 6;
+            AgeTextBox.TabIndex = 2;
             AgeTextBox.TextChanged += AgeTextBox_TextChanged;
             // 
             // NameLabel
@@ -121,7 +121,7 @@
             NameTextBox.Location = new Point(6, 69);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(269, 27);
-            NameTextBox.TabIndex = 5;
+            NameTextBox.TabIndex = 1;
             NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // CurrentProblemGroupBox
@@ -154,6 +154,7 @@
             StudentAnswerTextBox.Name = "StudentAnswerTextBox";
             StudentAnswerTextBox.Size = new Size(216, 27);
             StudentAnswerTextBox.TabIndex = 4;
+            StudentAnswerTextBox.TextChanged += StudentAnswerTextBox_TextChanged;
             // 
             // SecondNumberLabel
             // 
@@ -196,7 +197,7 @@
             MathTypeGroupBox.Location = new Point(293, 130);
             MathTypeGroupBox.Name = "MathTypeGroupBox";
             MathTypeGroupBox.Size = new Size(175, 308);
-            MathTypeGroupBox.TabIndex = 1;
+            MathTypeGroupBox.TabIndex = 2;
             MathTypeGroupBox.TabStop = false;
             MathTypeGroupBox.Text = "Math Problem Type";
             // 
@@ -257,7 +258,7 @@
             ButtonGroupBox.Location = new Point(474, 12);
             ButtonGroupBox.Name = "ButtonGroupBox";
             ButtonGroupBox.Size = new Size(314, 426);
-            ButtonGroupBox.TabIndex = 2;
+            ButtonGroupBox.TabIndex = 3;
             ButtonGroupBox.TabStop = false;
             // 
             // ExitButton
