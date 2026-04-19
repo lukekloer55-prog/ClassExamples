@@ -59,7 +59,7 @@
             this.DayChargeLael = new System.Windows.Forms.Label();
             this.MileageChargeTextBox = new System.Windows.Forms.TextBox();
             this.MileageChargeLabel = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.DayChargeTextBox = new System.Windows.Forms.TextBox();
             this.DistanceDrivenInMilesLabel = new System.Windows.Forms.Label();
             this.DistanceDrivenInMilesTextBox = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
@@ -89,7 +89,7 @@
             this.CustomerNameLabel.Size = new System.Drawing.Size(141, 26);
             this.CustomerNameLabel.TabIndex = 2;
             this.CustomerNameLabel.Text = "CustomerName";
-            this.CustomerNameLabel.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // AddressLabel
             // 
@@ -217,7 +217,7 @@
             this.KilometersRadioButton.TabStop = true;
             this.KilometersRadioButton.Text = "Kilometers";
             this.KilometersRadioButton.UseVisualStyleBackColor = true;
-            this.KilometersRadioButton.CheckedChanged += new System.EventHandler(this.KilometersRadioButton_CheckedChanged);
+         
             // 
             // MilesRadioButton
             // 
@@ -229,7 +229,6 @@
             this.MilesRadioButton.TabStop = true;
             this.MilesRadioButton.Text = "Miles";
             this.MilesRadioButton.UseVisualStyleBackColor = true;
-            this.MilesRadioButton.CheckedChanged += new System.EventHandler(this.MilesRadioButton_CheckedChanged);
             // 
             // DiscountGroupBox
             // 
@@ -261,7 +260,6 @@
             this.AAACheckBox.TabIndex = 0;
             this.AAACheckBox.Text = "AAA Member Discount";
             this.AAACheckBox.UseVisualStyleBackColor = true;
-            this.AAACheckBox.CheckedChanged += new System.EventHandler(this.AAACheckBox_CheckedChanged);
             // 
             // YouOweLabel
             // 
@@ -303,7 +301,7 @@
             // 
             // MileageChargeTextBox
             // 
-            this.MileageChargeTextBox.Location = new System.Drawing.Point(618, 77);
+            this.MileageChargeTextBox.Location = new System.Drawing.Point(618, 51);
             this.MileageChargeTextBox.Name = "MileageChargeTextBox";
             this.MileageChargeTextBox.Size = new System.Drawing.Size(123, 20);
             this.MileageChargeTextBox.TabIndex = 25;
@@ -316,12 +314,13 @@
             this.MileageChargeLabel.TabIndex = 24;
             this.MileageChargeLabel.Text = "Mileage Charge";
             // 
-            // textBox12
+            // DayChargeTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(618, 51);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(123, 20);
-            this.textBox12.TabIndex = 23;
+            this.DayChargeTextBox.Location = new System.Drawing.Point(618, 77);
+            this.DayChargeTextBox.Name = "DayChargeTextBox";
+            this.DayChargeTextBox.Size = new System.Drawing.Size(123, 20);
+            this.DayChargeTextBox.TabIndex = 23;
+            this.DayChargeTextBox.Text = "Du";
             // 
             // DistanceDrivenInMilesLabel
             // 
@@ -394,7 +393,7 @@
             this.Controls.Add(this.DayChargeLael);
             this.Controls.Add(this.MileageChargeTextBox);
             this.Controls.Add(this.MileageChargeLabel);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.DayChargeTextBox);
             this.Controls.Add(this.DistanceDrivenInMilesLabel);
             this.Controls.Add(this.DistanceDrivenInMilesTextBox);
             this.Controls.Add(this.DiscountGroupBox);
@@ -458,7 +457,7 @@
         private System.Windows.Forms.Label DayChargeLael;
         private System.Windows.Forms.TextBox MileageChargeTextBox;
         private System.Windows.Forms.Label MileageChargeLabel;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox DayChargeTextBox;
         private System.Windows.Forms.Label DistanceDrivenInMilesLabel;
         private System.Windows.Forms.TextBox DistanceDrivenInMilesTextBox;
         private System.Windows.Forms.Button CalculateButton;
