@@ -1,6 +1,6 @@
 ﻿namespace CarRental
 {
-    partial class Form1
+    partial class CarRental
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,11 @@
             this.ZipCodeLabel = new System.Windows.Forms.Label();
             this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
             this.OdomoterReadingGroupBox = new System.Windows.Forms.GroupBox();
-            this.MilesRadioButton = new System.Windows.Forms.RadioButton();
             this.KilometersRadioButton = new System.Windows.Forms.RadioButton();
+            this.MilesRadioButton = new System.Windows.Forms.RadioButton();
             this.DiscountGroupBox = new System.Windows.Forms.GroupBox();
-            this.AAACheckBox = new System.Windows.Forms.CheckBox();
             this.SeniorCitizenCheckBox = new System.Windows.Forms.CheckBox();
+            this.AAACheckBox = new System.Windows.Forms.CheckBox();
             this.YouOweLabel = new System.Windows.Forms.Label();
             this.YouOweTextBox = new System.Windows.Forms.TextBox();
             this.MinusDiscountLabel = new System.Windows.Forms.Label();
@@ -207,17 +207,6 @@
             this.OdomoterReadingGroupBox.TabStop = false;
             this.OdomoterReadingGroupBox.Text = "Is Odometer In Miles Or Kilometers?";
             // 
-            // MilesRadioButton
-            // 
-            this.MilesRadioButton.AutoSize = true;
-            this.MilesRadioButton.Location = new System.Drawing.Point(19, 28);
-            this.MilesRadioButton.Name = "MilesRadioButton";
-            this.MilesRadioButton.Size = new System.Drawing.Size(49, 17);
-            this.MilesRadioButton.TabIndex = 18;
-            this.MilesRadioButton.TabStop = true;
-            this.MilesRadioButton.Text = "Miles";
-            this.MilesRadioButton.UseVisualStyleBackColor = true;
-            // 
             // KilometersRadioButton
             // 
             this.KilometersRadioButton.AutoSize = true;
@@ -228,6 +217,19 @@
             this.KilometersRadioButton.TabStop = true;
             this.KilometersRadioButton.Text = "Kilometers";
             this.KilometersRadioButton.UseVisualStyleBackColor = true;
+            this.KilometersRadioButton.CheckedChanged += new System.EventHandler(this.KilometersRadioButton_CheckedChanged);
+            // 
+            // MilesRadioButton
+            // 
+            this.MilesRadioButton.AutoSize = true;
+            this.MilesRadioButton.Location = new System.Drawing.Point(19, 28);
+            this.MilesRadioButton.Name = "MilesRadioButton";
+            this.MilesRadioButton.Size = new System.Drawing.Size(49, 17);
+            this.MilesRadioButton.TabIndex = 18;
+            this.MilesRadioButton.TabStop = true;
+            this.MilesRadioButton.Text = "Miles";
+            this.MilesRadioButton.UseVisualStyleBackColor = true;
+            this.MilesRadioButton.CheckedChanged += new System.EventHandler(this.MilesRadioButton_CheckedChanged);
             // 
             // DiscountGroupBox
             // 
@@ -240,16 +242,6 @@
             this.DiscountGroupBox.TabStop = false;
             this.DiscountGroupBox.Text = "Enter Any Discounts";
             // 
-            // AAACheckBox
-            // 
-            this.AAACheckBox.AutoSize = true;
-            this.AAACheckBox.Location = new System.Drawing.Point(25, 32);
-            this.AAACheckBox.Name = "AAACheckBox";
-            this.AAACheckBox.Size = new System.Drawing.Size(133, 17);
-            this.AAACheckBox.TabIndex = 0;
-            this.AAACheckBox.Text = "AAA Member Discount";
-            this.AAACheckBox.UseVisualStyleBackColor = true;
-            // 
             // SeniorCitizenCheckBox
             // 
             this.SeniorCitizenCheckBox.AutoSize = true;
@@ -259,6 +251,17 @@
             this.SeniorCitizenCheckBox.TabIndex = 1;
             this.SeniorCitizenCheckBox.Text = "Senior Citizen Discount";
             this.SeniorCitizenCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // AAACheckBox
+            // 
+            this.AAACheckBox.AutoSize = true;
+            this.AAACheckBox.Location = new System.Drawing.Point(25, 32);
+            this.AAACheckBox.Name = "AAACheckBox";
+            this.AAACheckBox.Size = new System.Drawing.Size(133, 17);
+            this.AAACheckBox.TabIndex = 0;
+            this.AAACheckBox.Text = "AAA Member Discount";
+            this.AAACheckBox.UseVisualStyleBackColor = true;
+            this.AAACheckBox.CheckedChanged += new System.EventHandler(this.AAACheckBox_CheckedChanged);
             // 
             // YouOweLabel
             // 
@@ -343,6 +346,7 @@
             this.CalculateButton.TabIndex = 31;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ClearButton
             // 
@@ -352,6 +356,7 @@
             this.ClearButton.TabIndex = 32;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // Exitutton
             // 
@@ -361,6 +366,7 @@
             this.Exitutton.TabIndex = 34;
             this.Exitutton.Text = "Exit";
             this.Exitutton.UseVisualStyleBackColor = true;
+            this.Exitutton.Click += new System.EventHandler(this.Exitutton_Click);
             // 
             // SummaryButton
             // 
@@ -370,8 +376,9 @@
             this.SummaryButton.TabIndex = 33;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
-            // Form1
+            // CarRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -408,7 +415,7 @@
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.CustomerNameLabel);
             this.Controls.Add(this.CustomerNameTextBox);
-            this.Name = "Form1";
+            this.Name = "CarRental";
             this.Text = "Form1";
             this.OdomoterReadingGroupBox.ResumeLayout(false);
             this.OdomoterReadingGroupBox.PerformLayout();
