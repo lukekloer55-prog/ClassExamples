@@ -64,7 +64,7 @@
             this.DistanceDrivenInMilesTextBox = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.Exitutton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SummaryButton = new System.Windows.Forms.Button();
             this.OdomoterReadingGroupBox.SuspendLayout();
             this.DiscountGroupBox.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             // CustomerNameTextBox
             // 
-            this.CustomerNameTextBox.Location = new System.Drawing.Point(171, 12);
+            this.CustomerNameTextBox.Location = new System.Drawing.Point(166, 12);
             this.CustomerNameTextBox.Name = "CustomerNameTextBox";
             this.CustomerNameTextBox.Size = new System.Drawing.Size(123, 20);
             this.CustomerNameTextBox.TabIndex = 0;
@@ -84,16 +84,15 @@
             // 
             // CustomerNameLabel
             // 
-            this.CustomerNameLabel.Location = new System.Drawing.Point(15, 12);
+            this.CustomerNameLabel.Location = new System.Drawing.Point(10, 15);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
-            this.CustomerNameLabel.Size = new System.Drawing.Size(141, 26);
+            this.CustomerNameLabel.Size = new System.Drawing.Size(136, 20);
             this.CustomerNameLabel.TabIndex = 2;
             this.CustomerNameLabel.Text = "CustomerName";
-            
             // 
             // AddressLabel
             // 
-            this.AddressLabel.Location = new System.Drawing.Point(15, 38);
+            this.AddressLabel.Location = new System.Drawing.Point(10, 41);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(150, 26);
             this.AddressLabel.TabIndex = 4;
@@ -101,14 +100,14 @@
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Location = new System.Drawing.Point(171, 38);
+            this.AddressTextBox.Location = new System.Drawing.Point(166, 41);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(123, 20);
             this.AddressTextBox.TabIndex = 3;
             // 
             // StateLabel
             // 
-            this.StateLabel.Location = new System.Drawing.Point(15, 90);
+            this.StateLabel.Location = new System.Drawing.Point(8, 93);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(141, 20);
             this.StateLabel.TabIndex = 8;
@@ -116,29 +115,29 @@
             // 
             // StateTextBox
             // 
-            this.StateTextBox.Location = new System.Drawing.Point(171, 90);
+            this.StateTextBox.Location = new System.Drawing.Point(166, 93);
             this.StateTextBox.Name = "StateTextBox";
             this.StateTextBox.Size = new System.Drawing.Size(123, 20);
             this.StateTextBox.TabIndex = 7;
             // 
             // CityLabel
             // 
-            this.CityLabel.Location = new System.Drawing.Point(15, 64);
+            this.CityLabel.Location = new System.Drawing.Point(10, 67);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(141, 26);
+            this.CityLabel.Size = new System.Drawing.Size(141, 20);
             this.CityLabel.TabIndex = 6;
             this.CityLabel.Text = "City";
             // 
             // CityTextBox
             // 
-            this.CityTextBox.Location = new System.Drawing.Point(171, 64);
+            this.CityTextBox.Location = new System.Drawing.Point(166, 67);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(123, 20);
             this.CityTextBox.TabIndex = 5;
             // 
             // NumberOfDaysLabel
             // 
-            this.NumberOfDaysLabel.Location = new System.Drawing.Point(15, 194);
+            this.NumberOfDaysLabel.Location = new System.Drawing.Point(10, 200);
             this.NumberOfDaysLabel.Name = "NumberOfDaysLabel";
             this.NumberOfDaysLabel.Size = new System.Drawing.Size(150, 17);
             this.NumberOfDaysLabel.TabIndex = 16;
@@ -146,14 +145,14 @@
             // 
             // NumberOfDaysTextBox
             // 
-            this.NumberOfDaysTextBox.Location = new System.Drawing.Point(171, 191);
+            this.NumberOfDaysTextBox.Location = new System.Drawing.Point(166, 200);
             this.NumberOfDaysTextBox.Name = "NumberOfDaysTextBox";
             this.NumberOfDaysTextBox.Size = new System.Drawing.Size(123, 20);
             this.NumberOfDaysTextBox.TabIndex = 15;
             // 
             // EndingOdomoterReadingLabel
             // 
-            this.EndingOdomoterReadingLabel.Location = new System.Drawing.Point(15, 168);
+            this.EndingOdomoterReadingLabel.Location = new System.Drawing.Point(10, 177);
             this.EndingOdomoterReadingLabel.Name = "EndingOdomoterReadingLabel";
             this.EndingOdomoterReadingLabel.Size = new System.Drawing.Size(150, 17);
             this.EndingOdomoterReadingLabel.TabIndex = 14;
@@ -161,14 +160,14 @@
             // 
             // EndingOdomoterReadingTextBox
             // 
-            this.EndingOdomoterReadingTextBox.Location = new System.Drawing.Point(171, 165);
+            this.EndingOdomoterReadingTextBox.Location = new System.Drawing.Point(166, 174);
             this.EndingOdomoterReadingTextBox.Name = "EndingOdomoterReadingTextBox";
             this.EndingOdomoterReadingTextBox.Size = new System.Drawing.Size(123, 20);
             this.EndingOdomoterReadingTextBox.TabIndex = 13;
             // 
             // BeginningOdometerReadingLabel
             // 
-            this.BeginningOdometerReadingLabel.Location = new System.Drawing.Point(15, 142);
+            this.BeginningOdometerReadingLabel.Location = new System.Drawing.Point(8, 148);
             this.BeginningOdometerReadingLabel.Name = "BeginningOdometerReadingLabel";
             this.BeginningOdometerReadingLabel.Size = new System.Drawing.Size(150, 20);
             this.BeginningOdometerReadingLabel.TabIndex = 12;
@@ -176,14 +175,14 @@
             // 
             // BeginningOdometerReadingTextBox
             // 
-            this.BeginningOdometerReadingTextBox.Location = new System.Drawing.Point(171, 142);
+            this.BeginningOdometerReadingTextBox.Location = new System.Drawing.Point(166, 148);
             this.BeginningOdometerReadingTextBox.Name = "BeginningOdometerReadingTextBox";
             this.BeginningOdometerReadingTextBox.Size = new System.Drawing.Size(123, 20);
             this.BeginningOdometerReadingTextBox.TabIndex = 11;
             // 
             // ZipCodeLabel
             // 
-            this.ZipCodeLabel.Location = new System.Drawing.Point(15, 116);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(10, 118);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(150, 33);
             this.ZipCodeLabel.TabIndex = 10;
@@ -191,7 +190,7 @@
             // 
             // ZipCodeTextBox
             // 
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(171, 117);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(166, 122);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(123, 20);
             this.ZipCodeTextBox.TabIndex = 9;
@@ -200,7 +199,8 @@
             // 
             this.OdomoterReadingGroupBox.Controls.Add(this.KilometersRadioButton);
             this.OdomoterReadingGroupBox.Controls.Add(this.MilesRadioButton);
-            this.OdomoterReadingGroupBox.Location = new System.Drawing.Point(12, 262);
+            this.OdomoterReadingGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OdomoterReadingGroupBox.Location = new System.Drawing.Point(28, 270);
             this.OdomoterReadingGroupBox.Name = "OdomoterReadingGroupBox";
             this.OdomoterReadingGroupBox.Size = new System.Drawing.Size(309, 99);
             this.OdomoterReadingGroupBox.TabIndex = 17;
@@ -212,19 +212,18 @@
             this.KilometersRadioButton.AutoSize = true;
             this.KilometersRadioButton.Location = new System.Drawing.Point(19, 51);
             this.KilometersRadioButton.Name = "KilometersRadioButton";
-            this.KilometersRadioButton.Size = new System.Drawing.Size(73, 17);
+            this.KilometersRadioButton.Size = new System.Drawing.Size(101, 24);
             this.KilometersRadioButton.TabIndex = 19;
             this.KilometersRadioButton.TabStop = true;
             this.KilometersRadioButton.Text = "Kilometers";
             this.KilometersRadioButton.UseVisualStyleBackColor = true;
-         
             // 
             // MilesRadioButton
             // 
             this.MilesRadioButton.AutoSize = true;
             this.MilesRadioButton.Location = new System.Drawing.Point(19, 28);
             this.MilesRadioButton.Name = "MilesRadioButton";
-            this.MilesRadioButton.Size = new System.Drawing.Size(49, 17);
+            this.MilesRadioButton.Size = new System.Drawing.Size(63, 24);
             this.MilesRadioButton.TabIndex = 18;
             this.MilesRadioButton.TabStop = true;
             this.MilesRadioButton.Text = "Miles";
@@ -234,9 +233,10 @@
             // 
             this.DiscountGroupBox.Controls.Add(this.SeniorCitizenCheckBox);
             this.DiscountGroupBox.Controls.Add(this.AAACheckBox);
-            this.DiscountGroupBox.Location = new System.Drawing.Point(327, 262);
+            this.DiscountGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiscountGroupBox.Location = new System.Drawing.Point(445, 270);
             this.DiscountGroupBox.Name = "DiscountGroupBox";
-            this.DiscountGroupBox.Size = new System.Drawing.Size(414, 99);
+            this.DiscountGroupBox.Size = new System.Drawing.Size(308, 99);
             this.DiscountGroupBox.TabIndex = 20;
             this.DiscountGroupBox.TabStop = false;
             this.DiscountGroupBox.Text = "Enter Any Discounts";
@@ -244,9 +244,10 @@
             // SeniorCitizenCheckBox
             // 
             this.SeniorCitizenCheckBox.AutoSize = true;
+            this.SeniorCitizenCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SeniorCitizenCheckBox.Location = new System.Drawing.Point(25, 55);
             this.SeniorCitizenCheckBox.Name = "SeniorCitizenCheckBox";
-            this.SeniorCitizenCheckBox.Size = new System.Drawing.Size(135, 17);
+            this.SeniorCitizenCheckBox.Size = new System.Drawing.Size(193, 24);
             this.SeniorCitizenCheckBox.TabIndex = 1;
             this.SeniorCitizenCheckBox.Text = "Senior Citizen Discount";
             this.SeniorCitizenCheckBox.UseVisualStyleBackColor = true;
@@ -254,31 +255,35 @@
             // AAACheckBox
             // 
             this.AAACheckBox.AutoSize = true;
+            this.AAACheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AAACheckBox.Location = new System.Drawing.Point(25, 32);
             this.AAACheckBox.Name = "AAACheckBox";
-            this.AAACheckBox.Size = new System.Drawing.Size(133, 17);
+            this.AAACheckBox.Size = new System.Drawing.Size(190, 24);
             this.AAACheckBox.TabIndex = 0;
             this.AAACheckBox.Text = "AAA Member Discount";
             this.AAACheckBox.UseVisualStyleBackColor = true;
             // 
             // YouOweLabel
             // 
-            this.YouOweLabel.Location = new System.Drawing.Point(478, 129);
+            this.YouOweLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YouOweLabel.Location = new System.Drawing.Point(481, 170);
             this.YouOweLabel.Name = "YouOweLabel";
             this.YouOweLabel.Size = new System.Drawing.Size(134, 24);
             this.YouOweLabel.TabIndex = 30;
             this.YouOweLabel.Text = "You Owe";
+            this.YouOweLabel.Click += new System.EventHandler(this.YouOweLabel_Click);
             // 
             // YouOweTextBox
             // 
-            this.YouOweTextBox.Location = new System.Drawing.Point(618, 129);
+            this.YouOweTextBox.Location = new System.Drawing.Point(648, 170);
             this.YouOweTextBox.Name = "YouOweTextBox";
             this.YouOweTextBox.Size = new System.Drawing.Size(123, 20);
             this.YouOweTextBox.TabIndex = 29;
             // 
             // MinusDiscountLabel
             // 
-            this.MinusDiscountLabel.Location = new System.Drawing.Point(478, 103);
+            this.MinusDiscountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinusDiscountLabel.Location = new System.Drawing.Point(481, 137);
             this.MinusDiscountLabel.Name = "MinusDiscountLabel";
             this.MinusDiscountLabel.Size = new System.Drawing.Size(134, 20);
             this.MinusDiscountLabel.TabIndex = 28;
@@ -286,14 +291,15 @@
             // 
             // MinusDiscountTextBox
             // 
-            this.MinusDiscountTextBox.Location = new System.Drawing.Point(618, 103);
+            this.MinusDiscountTextBox.Location = new System.Drawing.Point(648, 137);
             this.MinusDiscountTextBox.Name = "MinusDiscountTextBox";
             this.MinusDiscountTextBox.Size = new System.Drawing.Size(123, 20);
             this.MinusDiscountTextBox.TabIndex = 27;
             // 
             // DayChargeLael
             // 
-            this.DayChargeLael.Location = new System.Drawing.Point(478, 77);
+            this.DayChargeLael.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DayChargeLael.Location = new System.Drawing.Point(481, 102);
             this.DayChargeLael.Name = "DayChargeLael";
             this.DayChargeLael.Size = new System.Drawing.Size(134, 20);
             this.DayChargeLael.TabIndex = 26;
@@ -301,14 +307,15 @@
             // 
             // MileageChargeTextBox
             // 
-            this.MileageChargeTextBox.Location = new System.Drawing.Point(618, 51);
+            this.MileageChargeTextBox.Location = new System.Drawing.Point(648, 66);
             this.MileageChargeTextBox.Name = "MileageChargeTextBox";
             this.MileageChargeTextBox.Size = new System.Drawing.Size(123, 20);
             this.MileageChargeTextBox.TabIndex = 25;
             // 
             // MileageChargeLabel
             // 
-            this.MileageChargeLabel.Location = new System.Drawing.Point(478, 51);
+            this.MileageChargeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MileageChargeLabel.Location = new System.Drawing.Point(481, 67);
             this.MileageChargeLabel.Name = "MileageChargeLabel";
             this.MileageChargeLabel.Size = new System.Drawing.Size(134, 20);
             this.MileageChargeLabel.TabIndex = 24;
@@ -316,15 +323,15 @@
             // 
             // DayChargeTextBox
             // 
-            this.DayChargeTextBox.Location = new System.Drawing.Point(618, 77);
+            this.DayChargeTextBox.Location = new System.Drawing.Point(648, 102);
             this.DayChargeTextBox.Name = "DayChargeTextBox";
             this.DayChargeTextBox.Size = new System.Drawing.Size(123, 20);
             this.DayChargeTextBox.TabIndex = 23;
-            this.DayChargeTextBox.Text = "Du";
             // 
             // DistanceDrivenInMilesLabel
             // 
-            this.DistanceDrivenInMilesLabel.Location = new System.Drawing.Point(475, 25);
+            this.DistanceDrivenInMilesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceDrivenInMilesLabel.Location = new System.Drawing.Point(481, 28);
             this.DistanceDrivenInMilesLabel.Name = "DistanceDrivenInMilesLabel";
             this.DistanceDrivenInMilesLabel.Size = new System.Drawing.Size(137, 20);
             this.DistanceDrivenInMilesLabel.TabIndex = 22;
@@ -332,16 +339,16 @@
             // 
             // DistanceDrivenInMilesTextBox
             // 
-            this.DistanceDrivenInMilesTextBox.Location = new System.Drawing.Point(618, 25);
+            this.DistanceDrivenInMilesTextBox.Location = new System.Drawing.Point(648, 28);
             this.DistanceDrivenInMilesTextBox.Name = "DistanceDrivenInMilesTextBox";
             this.DistanceDrivenInMilesTextBox.Size = new System.Drawing.Size(123, 20);
             this.DistanceDrivenInMilesTextBox.TabIndex = 21;
             // 
             // CalculateButton
             // 
-            this.CalculateButton.Location = new System.Drawing.Point(205, 415);
+            this.CalculateButton.Location = new System.Drawing.Point(147, 402);
             this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(75, 23);
+            this.CalculateButton.Size = new System.Drawing.Size(109, 36);
             this.CalculateButton.TabIndex = 31;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
@@ -349,29 +356,29 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(286, 415);
+            this.ClearButton.Location = new System.Drawing.Point(262, 402);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.Size = new System.Drawing.Size(109, 36);
             this.ClearButton.TabIndex = 32;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // Exitutton
+            // ExitButton
             // 
-            this.Exitutton.Location = new System.Drawing.Point(448, 415);
-            this.Exitutton.Name = "Exitutton";
-            this.Exitutton.Size = new System.Drawing.Size(75, 23);
-            this.Exitutton.TabIndex = 34;
-            this.Exitutton.Text = "Exit";
-            this.Exitutton.UseVisualStyleBackColor = true;
-            this.Exitutton.Click += new System.EventHandler(this.Exitutton_Click);
+            this.ExitButton.Location = new System.Drawing.Point(492, 402);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(109, 36);
+            this.ExitButton.TabIndex = 34;
+            this.ExitButton.Text = "E&xit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.Exitutton_Click);
             // 
             // SummaryButton
             // 
-            this.SummaryButton.Location = new System.Drawing.Point(367, 415);
+            this.SummaryButton.Location = new System.Drawing.Point(377, 402);
             this.SummaryButton.Name = "SummaryButton";
-            this.SummaryButton.Size = new System.Drawing.Size(75, 23);
+            this.SummaryButton.Size = new System.Drawing.Size(109, 36);
             this.SummaryButton.TabIndex = 33;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
@@ -382,7 +389,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Exitutton);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
@@ -462,7 +469,7 @@
         private System.Windows.Forms.TextBox DistanceDrivenInMilesTextBox;
         private System.Windows.Forms.Button CalculateButton;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.Button Exitutton;
+        private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button SummaryButton;
     }
 }
