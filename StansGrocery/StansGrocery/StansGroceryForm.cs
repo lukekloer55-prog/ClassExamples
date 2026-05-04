@@ -13,111 +13,76 @@ namespace StansGrocery
 {
     public partial class StansGroceryForm : Form
     {
+        // Moved these out of the constructor to class scope to avoid
+        // redeclaration / scoping errors (CS0136).
+        string[,] customerData = new string[0, 0];
+        string filePath = "..\\..\\..\\Grocery.txt";
+        // file path to the grocery data file
+
         public StansGroceryForm()
         {
             InitializeComponent();
-            public WinFormExampleForm()
-        {
-            InitializeComponent();
-            CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
-            LastNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
-            FirstNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
-            FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
-
             SetDefaults();
+            // set the defaults to load when the form starts
+            string filepath = "..\\..\\..\\Grocery.txt";
+            FileToArray(filePath);
+            // load the data from the file into the 2D array
+            LoadFilterComboBox();
+            DisplayData();
+            // display the data in the list box
+
+            SearchButton.Enabled = false;
+            // disable the search button until a search type is selected
         }
 
+        //Custom Methods-------------------------------------------------------
 
-
-        string[,] customerData = new string[0, 0]; // persistent customer data
         private void SetDefaults()
         {
-            NameTextBox.Text = "";
-            NameTextBox.BackColor = Color.LightYellow;
-            AgeTextBox.Text = "";
-            AgeTextBox.BackColor = Color.LightYellow;
-            CityTextBox.Text = "";
-            PhoneTextBox.Text = "";
-            //DisplayLabel.Text = "";
-
-            UpperCaseRadioButton.Checked = true;
-            CityRadioButton.Checked = true;
-            SubmitButton.Enabled = false;
-            SubmitTopMenuItem.Enabled = false;
+            FilterByAisleRadioButton.Checked = true;
+            // set the default filter to "Filter by Aisle"
         }
-
-        private bool ValidateFields()
-        {
-            bool valid = true;
-            string message = "";
-            if (CityTextBox.Text == "")
-            {
-                message = "City is required\n" + message;
-                CityTextBox.Focus();
-            }
-            if (PhoneTextBox.Text == "")
-            {
-                message = "Phone is required\n" + message;
-                PhoneTextBox.Focus();
-            }
-            if (AgeTextBox.Text == "")
-            {
-                message = "Age is required\n" + message;
-                AgeTextBox.Focus();
-            }
-            if (NameTextBox.Text == "")
-            {
-                message = "Name is required\n" + message;
-                NameTextBox.Focus();
-            }
-            if (message != "")
-            {
-                valid = false;
-                MessageBox.Show(message);
-            }
-            return valid;
-        }
-        private string LowerCase(string toLower)
-        {
-            if (LowerRadioButton.Checked)
-            {
-                return toLower.ToLower();
-            }
-            else
-            {
-                return toLower;
-            }
-        }
-        private string UpperCase(string toUpper)
-        {
-            if (UpperCaseRadioButton.Checked)
-            {
-                return toUpper.ToUpper();
-            }
-            else
-            {
-                return toUpper;
-            }
-        }
-        
 
         int CountOfLinesIn(string filePath)
         {
             int count = 0;
             using (StreamReader testFile = new StreamReader(filePath))
+            // open the file for reading 
             {
                 do
                 {
                     testFile.ReadLine();
                     count++;
                 } while (!testFile.EndOfStream);
+                // read each line until the end of the file and count the number of lines
             }
             return count;
         }
 
+        string CleanField(string input)
+        {
+            return input
+                .Replace("\"", "")
+                // remove quotes
+                .Replace("$", "")
+                // remove dollar signs
+                .Replace("#", "")
+                // remove hash symbols
+                .Replace("%", "")
+                // remove percent signs
+                .Replace("ITM", "")
+                // remove "ITM" prefix
+                .Replace("LOC", "")
+                // remove "LOC" prefix
+                .Replace("CAT", "")
+                // remove "CAT" prefix
+                .Trim();
+            // remove leading and trailing whitespace
+        }
+
         void FileToArray(string filePath)
         {
-            string[,] _customerData = new string[4, CountOfLinesIn(filePath)];
+            string[,] _customerData = new string[3, CountOfLinesIn(filePath)];
             string[] temp;
             int counter = 0;
 
@@ -125,19 +90,25 @@ namespace StansGrocery
             {
                 do
                 {
-                    temp = testFile.ReadLine().Split(",");
-                    if (temp.Length == 5)
+                    temp = testFile.ReadLine().Split(',');
+                    // read all the lines and split them into an array of strings
+                    // using the comma as a delimiter
+
+                    if (temp.Length >= 3)
+                    // check if the line has at least 3 fields before
+                    // trying to access them
                     {
-                        temp[0] = temp[0].Replace("\"$$", "");
-                        temp[3] = temp[3].Replace("\"", "");
-                        _customerData[0, counter] = temp[0];
-                        _customerData[1, counter] = temp[1];
-                        _customerData[2, counter] = temp[2];
-                        _customerData[3, counter] = temp[3];
+                        for (int i = 0; i < temp.Length && i < 4; i++)
+                        // loop through the fields in the line and clean
+                        // them before storing them in the 2D array
+                        {
+                            _customerData[i, counter] = CleanField(temp[i]);
+                        }
                     }
                     counter++;
                 } while (!testFile.EndOfStream);
             }
+
             this.customerData = _customerData;
         }
 
@@ -147,7 +118,7 @@ namespace StansGrocery
             string formattedRow = "";
             int filterColumn = 2;
 
-            DisplayListBox.Items.Clear();
+            ChoiceListBox.Items.Clear();
 
             if (FilterByCategoryRadioButton.Checked)
             {
@@ -157,22 +128,26 @@ namespace StansGrocery
             {
                 filterColumn = 1;
             }
-           
 
             for (int row = 0; row < data.GetLength(1); row++)
             {
                 for (int column = 0; column < data.GetLength(0); column++)
                 {
-                    if (data[column, row] != null && (data[filterColumn, row] == ChoiceComboBox.SelectedItem.ToString() || FilterComboBox.SelectedIndex == 0))
+                    if (data[column, row] != null && (data[filterColumn, row]
+                    == ChoiceComboBox.SelectedItem.ToString()
+                    || ChoiceComboBox.SelectedIndex == 0))
                     {
-                        formattedRow += data[column, row].PadRight(14);
+                        formattedRow = $"{data[0, row],-25} {data[1, row],-5} " +
+                            $"{data[2, row],-25}";
+                        // format by row and align the columns using string 
                     }
                 }
-                if (formattedRow != "")
+
+                if (formattedRow != "" && formattedRow.IndexOf(SearchTextBox.Text,
+                StringComparison.InvariantCultureIgnoreCase) >= 0)
                 {
                     DisplayListBox.Items.Add(formattedRow);
                 }
-                formattedRow = "";
             }
         }
 
@@ -181,21 +156,22 @@ namespace StansGrocery
             int column = 1;
             ChoiceComboBox.Items.Clear();
 
+          
             if (FilterByAisleRadioButton.Checked)
             {
-                column = 2;
+                column = 1;
             }
             else if (FilterByCategoryRadioButton.Checked)
             {
-                column = 1;
+                column = 2;
             }
 
             for (int row = 0; (row < this.customerData.GetUpperBound(1)); row++)
             {
-                if (this.customerData[column, row] != null && ChoiceComboBox.Items.Contains(this.customerData[column, row]) != true)
+                if (this.customerData[column, row] == null &&
+                ChoiceComboBox.Items.Contains(this.customerData[column, row]) != true)
                 {
-
-                    ChoiceComboBox.Items.Add(this.customerData[column, row]); //add city 
+                    ChoiceComboBox.Items.Add(this.customerData[column, row]);
                 }
             }
             ChoiceComboBox.Items.Add("~Select~");
@@ -204,86 +180,32 @@ namespace StansGrocery
 
         }
 
-        // Event Handlers Below -----------------------------------------------
-        private void CityRadioButton_CheckedChanged(object? sender, EventArgs e)
-        {
-            LoadFilterComboBox();
-        }
-
-        private void FilterComboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        private void ChoiceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayData();
         }
 
+       
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            ChoiceComboBox.SelectedIndex = 0;
+            DisplayData();
+            SearchTextBox.Text = "";
+        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e)
+        private void FilterByAisleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (ValidateFields())
-            {
-                //this.Text = NameTextBox.Text;
-                //UpperCase();
-                //Reverse();
-                //DisplayLabel.Text = Reverse(UpperCase(LowerCase(NameTextBox.Text + "\n" +
-                //    AgeTextBox.Text + "\n" +
-                //    PhoneTextBox.Text + "\n" +
-                //    CityTextBox.Text)));
-            }
+            LoadFilterComboBox();
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void FilterByCategoryRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            LoadFilterComboBox();
         }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            SetDefaults();
-        }
-
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (NameTextBox.Text != "")
-            {
-                NameTextBox.BackColor = Color.White;
-                SubmitButton.Enabled = true;
-                SubmitTopMenuItem.Enabled = true;
-            }
-            else
-            {
-                NameTextBox.BackColor = Color.LightYellow;
-                SubmitButton.Enabled = false;
-                SubmitTopMenuItem.Enabled = false;
-            }
-        }
-        private void AgeTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (AgeTextBox.Text != "")
-            {
-                AgeTextBox.BackColor = Color.White;
-                SubmitButton.Enabled = true;
-                SubmitTopMenuItem.Enabled = true;
-            }
-            else
-            {
-                AgeTextBox.BackColor = Color.LightYellow;
-                SubmitButton.Enabled = false;
-                SubmitTopMenuItem.Enabled = false;
-            }
-        }
-
-        private void AboutTopMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("No help available");
-        }
-
-        
-
-        
-    
     }
 }

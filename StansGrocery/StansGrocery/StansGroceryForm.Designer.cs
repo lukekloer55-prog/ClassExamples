@@ -99,6 +99,7 @@
             this.SearchButton.TabIndex = 6;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += SearchButton_Click;
             // 
             // ExitButton
             // 
@@ -108,6 +109,7 @@
             this.ExitButton.TabIndex = 7;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += ExitButton_Click;
             // 
             // StansGroceryForm
             // 
