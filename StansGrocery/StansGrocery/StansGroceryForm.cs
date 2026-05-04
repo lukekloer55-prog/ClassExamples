@@ -24,7 +24,6 @@ namespace StansGrocery
             LoadFilterComboBox();
             ChoiceComboBox.SelectedIndex = 0;
             DisplayData();
-            SearchButton.Enabled = false;
         }
 
         private void SetDefaults()
@@ -170,11 +169,6 @@ namespace StansGrocery
             DisplayData();
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            DisplayData();
-        }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -192,6 +186,45 @@ namespace StansGrocery
             LoadFilterComboBox();
             ChoiceComboBox.SelectedIndex = 0;
             DisplayData();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string search = SearchTextBox.Text.Trim();
+
+            DisplayListBox.Items.Clear();
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                MessageBox.Show ("Please enter a search term.");
+                return;
+            }
+
+            bool foundAny = false;
+
+            for (int row = 0; row < customerData.GetLength(1); row++)
+            {
+                 
+                    string name = customerData[0, row];
+                    string aisle = customerData[1, row];
+                    string category = customerData[2, row];
+
+                    if ((name != null && name.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0) ||
+                        (aisle != null && aisle.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0) ||
+                        (category != null && category.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0))
+                    {
+                        DisplayListBox.Items.Add($"{name} - {aisle} - {category}");
+                        foundAny = true;
+                    }
+                
+            }
+
+            if (!foundAny)
+            {
+                MessageBox.Show($"Sorry no matches for {search}");
+                
+            }
+           
         }
     }
 }
