@@ -64,6 +64,8 @@
             this.FilterByAisleRadioButton.TabStop = true;
             this.FilterByAisleRadioButton.Text = "Filter By Aisle";
             this.FilterByAisleRadioButton.UseVisualStyleBackColor = true;
+            this.FilterByAisleRadioButton.Click += FilterByAisleRadioButton_CheckedChanged;
+
             // 
             // FilterByCategoryRadioButton
             // 
@@ -75,6 +77,7 @@
             this.FilterByCategoryRadioButton.TabStop = true;
             this.FilterByCategoryRadioButton.Text = "Filter By Category";
             this.FilterByCategoryRadioButton.UseVisualStyleBackColor = true;
+            this.FilterByCategoryRadioButton.Click += FilterByCategoryRadioButton_CheckedChanged;
             // 
             // ChoiceListBox
             // 
@@ -129,6 +132,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void FilterByCategoryRadioButton_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion
