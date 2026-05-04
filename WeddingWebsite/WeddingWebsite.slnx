@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WeddingWebsite.AppHost/WeddingWebsite.AppHost.csproj" />
+  <Project Path="WeddingWebsite.Server/WeddingWebsite.Server.csproj" />
+</Solution>
