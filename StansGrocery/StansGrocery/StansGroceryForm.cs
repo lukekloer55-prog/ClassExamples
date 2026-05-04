@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*Luke Kloer
+Rcet 2265
+Semester Spring 2026
+RCET 2265 - Programming in C#
+Stans Grocery Program
+GitHub URL:
+https://github.com/lukekloer55-prog/ClassExamples/tree/main/StansGrocery */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
