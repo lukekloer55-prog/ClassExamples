@@ -24,7 +24,9 @@ namespace Etch_A_Sketch
         public EtchASketch()
         {
             InitializeComponent();
+            // Map event handlers to events
             MainDisplayPictureBox.MouseMove += MainDisplayPictureBox_MouseStuff;
+            // Populate the ToolComboBox with pen width options
             ToolComboBox.Items.Add(2);
             ToolComboBox.Items.Add(3);
             ToolComboBox.Items.Add(4);
@@ -100,6 +102,34 @@ namespace Etch_A_Sketch
             this.penWidth = int.Parse(ToolComboBox.SelectedItem.ToString());
         }
 
+        void DrawCosineWave()
+        {
+            // create a graphics object named Draw that draws on the PictureBox
+            Graphics Draw = MainDisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            Pen thePen = new Pen(Color.MediumVioletRed);
+            // set the width of the pen
+            thePen.Width = 3;
+            int lastX = 0, lastY = 0, currentY = 0;
+            // draw the line here 
+            float scaleX = MainDisplayPictureBox.Width / 360f;
+            float scaleY = (MainDisplayPictureBox.Height / 200f) * -1;
+            // scale the x-axis so that one period of the sine wave fits in the width of the picture box
+            Draw.TranslateTransform(0, MainDisplayPictureBox.Height / 2);
+            Draw.ScaleTransform(scaleX, scaleY);
+            // scale the drawing area so that the sine wave is wider and flip
+            // the y-axis so that positive values go upinstead of down
+            for (int currentX = 0; currentX < 360; currentX++)
+            {
+                currentY = (int)(Math.Round(100 * Math.Cos((Math.PI / 180) * currentX)));
+                Draw.DrawLine(thePen, lastX, lastY, currentX, currentY);
+                lastX = currentX;
+                lastY = currentY;
+            }
+            Draw.Dispose();
+            thePen.Dispose();
+        }
+
         void DrawSineWave()
         {
             // create a graphics object named Draw that draws on the PictureBox
@@ -121,34 +151,6 @@ namespace Etch_A_Sketch
             for (int currentX = 0; currentX < 360; currentX++)
             {
                 currentY = (int)(Math.Round(100 * Math.Sin((Math.PI / 180) * currentX)));
-                Draw.DrawLine(thePen, lastX, lastY, currentX, currentY);
-                lastX = currentX;
-                lastY = currentY;
-            }
-            Draw.Dispose();
-            thePen.Dispose();
-        }
-
-        void DrawCosineWave()
-        {
-            // create a graphics object named Draw that draws on the PictureBox
-            Graphics Draw = MainDisplayPictureBox.CreateGraphics();
-            // create a pen to draw with
-            Pen thePen = new Pen(Color.MediumVioletRed);
-            // set the width of the pen
-            thePen.Width = 3;
-            int lastX = 0, lastY = 0, currentY = 0;
-            // draw the line here 
-            float scaleX = MainDisplayPictureBox.Width / 360f;
-            float scaleY = (MainDisplayPictureBox.Height / 200f) * -1;
-            // scale the x-axis so that one period of the sine wave fits in the width of the picture box
-            Draw.TranslateTransform(0, MainDisplayPictureBox.Height / 2);
-            Draw.ScaleTransform(scaleX, scaleY);
-            // scale the drawing area so that the sine wave is wider and flip
-            // the y-axis so that positive values go upinstead of down
-            for (int currentX = 0; currentX < 360; currentX++)
-            {
-                currentY = (int)(Math.Round(100 * Math.Cos((Math.PI / 180) * currentX)));
                 Draw.DrawLine(thePen, lastX, lastY, currentX, currentY);
                 lastX = currentX;
                 lastY = currentY;
@@ -196,6 +198,39 @@ namespace Etch_A_Sketch
             thePen.Dispose();
         }
 
+
+        private void MainDisplayPictureBox_MouseStuff(object sender, MouseEventArgs e)
+        {
+            DrawingStatusLabel.Text = $"({e.X},{e.Y}) | {e.Button} " +
+                $"| {this.penColor} | {this.penWidth}";
+
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    DrawLineSegment(e.X, e.Y); // only draw when the left mouse button is down
+                    break;
+                case MouseButtons.Right:
+                    // Save for context menu
+                    break;
+                case MouseButtons.Middle:
+                    UpdatePenColor();
+                    // TODO open color picker dialogue
+                    break;
+                default:
+                    //MessageBox.Show($"{e.Button}");
+                    break;
+            }
+            // save the current mouse position for the next time we draw a line segment
+            this.oldX = e.X;
+            this.oldY = e.Y;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            // Clear the drawing by filling the picture box with the background color
+            ClearDrawing();
+        }
+
         void DrawGrid()
         {
             // create a graphics object named Draw that draws on the PictureBox
@@ -230,39 +265,6 @@ namespace Etch_A_Sketch
             DrawSineWave();
             DrawGrid();
         }
-
-        private void MainDisplayPictureBox_MouseStuff(object sender, MouseEventArgs e)
-        {
-            DrawingStatusLabel.Text = $"({e.X},{e.Y}) | {e.Button} " +
-                $"| {this.penColor} | {this.penWidth}";
-
-            switch (e.Button)
-            {
-                case MouseButtons.Left:
-                    DrawLineSegment(e.X, e.Y); // only draw when the left mouse button is down
-                    break;
-                case MouseButtons.Right:
-                    // Save for context menu
-                    break;
-                case MouseButtons.Middle:
-                    UpdatePenColor();
-                    // TODO open color picker dialogue
-                    break;
-                default:
-                    //MessageBox.Show($"{e.Button}");
-                    break;
-            }
-            // save the current mouse position for the next time we draw a line segment
-            this.oldX = e.X;
-            this.oldY = e.Y;
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            // Clear the drawing by filling the picture box with the background color
-            ClearDrawing();
-        }
-
 
         private void PenMenuItem_Click(object sender, EventArgs e)
         {
