@@ -32,7 +32,7 @@
             MouseRadioButton = new RadioButton();
             ExternalRadioButton = new RadioButton();
             DisplayPictureBox = new PictureBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
+            ContextMenuStrip = new ContextMenuStrip(components);
             fileToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
@@ -46,7 +46,7 @@
             ClearButton = new Button();
             ExitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
-            contextMenuStrip1.SuspendLayout();
+            ContextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // MouseRadioButton
@@ -81,11 +81,11 @@
             DisplayPictureBox.TabIndex = 2;
             DisplayPictureBox.TabStop = false;
             // 
-            // contextMenuStrip1
+            // ContextMenuStrip
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(100, 70);
+            ContextMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
+            ContextMenuStrip.Name = "contextMenuStrip1";
+            ContextMenuStrip.Size = new Size(100, 70);
             // 
             // fileToolStripMenuItem
             // 
@@ -193,7 +193,7 @@
             Name = "EtchASketch";
             Text = "Etch-A-Sketch";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
-            contextMenuStrip1.ResumeLayout(false);
+            ContextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,7 +203,7 @@
         private RadioButton MouseRadioButton;
         private RadioButton ExternalRadioButton;
         private PictureBox DisplayPictureBox;
-        private ContextMenuStrip contextMenuStrip1;
+        private ContextMenuStrip ContextMenuStrip;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
