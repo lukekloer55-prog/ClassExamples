@@ -45,6 +45,7 @@
             DrawWaveformsButton = new Button();
             ClearButton = new Button();
             ExitButton = new Button();
+            GetMousePoistionTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             ContextMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -178,6 +179,10 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // GetMousePoistionTimer
+            // 
+            GetMousePoistionTimer.Tick += GetMousePoistionTimer_Tick;
+            // 
             // EtchASketch
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -216,5 +221,6 @@
         private Button DrawWaveformsButton;
         private Button ClearButton;
         private Button ExitButton;
+        private System.Windows.Forms.Timer GetMousePoistionTimer;
     }
 }

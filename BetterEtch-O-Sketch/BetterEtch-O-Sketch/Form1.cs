@@ -11,14 +11,7 @@ namespace BetterEtch_O_Sketch
 
         void DrawSketch()
         {
-            Point cursorPosInPictureBox = DisplayPictureBox.PointToClient(Cursor.Position);
 
-            if (MouseControlEnabled && DisplayPictureBox.ClientRectangle.Contains(cursorPosInPictureBox))
-            {
-                if (MouseClick= true)
-                Point MousePosition = new Point(0, 0);
-
-            }
 
 
 
@@ -54,7 +47,7 @@ namespace BetterEtch_O_Sketch
 
         private void MouseRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (MouseRadioButton.Checked) 
+            if (MouseRadioButton.Checked)
             {
                 MouseControlEnabled = true;
                 ExternalControlEnabled = false;
@@ -66,8 +59,21 @@ namespace BetterEtch_O_Sketch
             if (ExternalRadioButton.Checked)
             {
                 ExternalControlEnabled = true;
-                MouseControlEnabled = false;  
-            } 
+                MouseControlEnabled = false;
+            }
+        }
+
+        private void GetMousePoistionTimer_Tick(object sender, EventArgs e)
+        {
+            Point cursorPosInPictureBox = DisplayPictureBox.PointToClient(Cursor.Position);
+
+            if (MouseControlEnabled && DisplayPictureBox.ClientRectangle.Contains(cursorPosInPictureBox)) ;
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    Point MouseCordinates = Cursor.Position;
+                }
+            }
         }
     }
 }
