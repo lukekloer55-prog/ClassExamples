@@ -81,6 +81,7 @@
             DisplayPictureBox.Size = new Size(765, 342);
             DisplayPictureBox.TabIndex = 2;
             DisplayPictureBox.TabStop = false;
+            DisplayPictureBox.Click += DisplayPictureBox_Click;
             // 
             // ContextMenuStrip
             // 
