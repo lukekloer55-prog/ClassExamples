@@ -76,6 +76,7 @@
             // 
             // DisplayPictureBox
             // 
+            DisplayPictureBox.BackColor = SystemColors.Window;
             DisplayPictureBox.Location = new Point(12, 35);
             DisplayPictureBox.Name = "DisplayPictureBox";
             DisplayPictureBox.Size = new Size(765, 342);
@@ -179,10 +180,6 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
-            // 
-            // GetMousePoistionTimer
-            // 
-            GetMousePoistionTimer.Tick += GetMousePoistionTimer_Tick;
             // 
             // EtchASketch
             // 

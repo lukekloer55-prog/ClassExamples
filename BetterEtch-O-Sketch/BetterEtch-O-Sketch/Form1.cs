@@ -12,6 +12,7 @@ namespace BetterEtch_O_Sketch
         public EtchASketch()
         {
             InitializeComponent();
+            DisplayPictureBox.MouseMove += MainDisplayPictureBox_MouseStuff;
         }
 
         void DrawLineSegment(int newx, int newy)
@@ -55,12 +56,6 @@ namespace BetterEtch_O_Sketch
             g.Dispose();
         }
 
-        void UpdatePenColor()
-        {
-            PenColorDialog.ShowDialog();
-            this.penColor = PenColorDialog.Color;
-        }
-
         
         //Event Handlers Start Here .......................................................
         private void SelectColorButton_Click(object sender, EventArgs e)
@@ -75,7 +70,7 @@ namespace BetterEtch_O_Sketch
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            ClearDrawing();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -115,7 +110,6 @@ namespace BetterEtch_O_Sketch
                     // Save for context menu
                     break;
                 case MouseButtons.Middle:
-                    UpdatePenColor();
                     // TODO open color picker dialogue
                     break;
                 default:
