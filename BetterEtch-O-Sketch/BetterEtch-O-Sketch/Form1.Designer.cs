@@ -58,6 +58,7 @@
             ClearMainStripItem = new ToolStripMenuItem();
             helpToolStripMenuItem1 = new ToolStripMenuItem();
             AboutMainStripItem = new ToolStripMenuItem();
+            ToolTip = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             ContextMenuStrip.SuspendLayout();
             StatusStrip.SuspendLayout();
@@ -73,6 +74,7 @@
             MouseRadioButton.TabIndex = 0;
             MouseRadioButton.TabStop = true;
             MouseRadioButton.Text = "Mouse Draw Mode";
+            ToolTip.SetToolTip(MouseRadioButton, "Used to select the mouse draw mode, that allows the user to draw within the picture box.");
             MouseRadioButton.UseVisualStyleBackColor = true;
             MouseRadioButton.CheckedChanged += MouseRadioButton_CheckedChanged;
             // 
@@ -85,6 +87,7 @@
             ExternalRadioButton.TabIndex = 1;
             ExternalRadioButton.TabStop = true;
             ExternalRadioButton.Text = "External Draw Mode";
+            ToolTip.SetToolTip(ExternalRadioButton, "Enables the External Draw Mode which allows the used to use an external device to read two different analog signals to control the drawing,");
             ExternalRadioButton.UseVisualStyleBackColor = true;
             ExternalRadioButton.CheckedChanged += ExternalRadioButton_CheckedChanged;
             // 
@@ -96,7 +99,7 @@
             DisplayPictureBox.Size = new Size(765, 342);
             DisplayPictureBox.TabIndex = 2;
             DisplayPictureBox.TabStop = false;
-            DisplayPictureBox.Click += DisplayPictureBox_Click;
+            ToolTip.SetToolTip(DisplayPictureBox, "Displays the users drawings and waveforms.");
             // 
             // ContextMenuStrip
             // 
@@ -117,7 +120,6 @@
             ExitStripMenuItem.Name = "ExitStripMenuItem";
             ExitStripMenuItem.Size = new Size(92, 22);
             ExitStripMenuItem.Text = "Exit";
-            ExitStripMenuItem.Click += ExitStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -131,21 +133,18 @@
             SelectColorStripMenuItem.Name = "SelectColorStripMenuItem";
             SelectColorStripMenuItem.Size = new Size(164, 22);
             SelectColorStripMenuItem.Text = "Select Color";
-            SelectColorStripMenuItem.Click += SelectColorStripMenuItem_Click;
             // 
             // DrawWaveformStripMenuItem
             // 
             DrawWaveformStripMenuItem.Name = "DrawWaveformStripMenuItem";
             DrawWaveformStripMenuItem.Size = new Size(164, 22);
             DrawWaveformStripMenuItem.Text = "Draw Waveforms";
-            DrawWaveformStripMenuItem.Click += DrawWaveformStripMenuItem_Click;
             // 
             // ClearStripMenuItem
             // 
             ClearStripMenuItem.Name = "ClearStripMenuItem";
             ClearStripMenuItem.Size = new Size(164, 22);
             ClearStripMenuItem.Text = "Clear";
-            ClearStripMenuItem.Click += ClearStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -159,7 +158,6 @@
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size = new Size(107, 22);
             aboutToolStripMenuItem.Text = "About";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // SelectColorButton
             // 
@@ -168,6 +166,7 @@
             SelectColorButton.Size = new Size(117, 35);
             SelectColorButton.TabIndex = 4;
             SelectColorButton.Text = "Select Color";
+            ToolTip.SetToolTip(SelectColorButton, "Allows the user to select the color of the Pen that will draw.");
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;
             // 
@@ -178,6 +177,7 @@
             DrawWaveformsButton.Size = new Size(117, 35);
             DrawWaveformsButton.TabIndex = 5;
             DrawWaveformsButton.Text = "Draw Waveforms";
+            ToolTip.SetToolTip(DrawWaveformsButton, "Allows the user to display a drawing of a tangent, cosine, and sine wave forms.");
             DrawWaveformsButton.UseVisualStyleBackColor = true;
             DrawWaveformsButton.Click += DrawWaveformsButton_Click;
             // 
@@ -188,6 +188,7 @@
             ClearButton.Size = new Size(117, 35);
             ClearButton.TabIndex = 6;
             ClearButton.Text = "Clear";
+            ToolTip.SetToolTip(ClearButton, "Allows the user to clear the drawing and play a shake effect and sound.");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -198,6 +199,7 @@
             ExitButton.Size = new Size(117, 35);
             ExitButton.TabIndex = 7;
             ExitButton.Text = "Exit";
+            ToolTip.SetToolTip(ExitButton, "Allows the user to leave the program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -213,8 +215,8 @@
             // PicStatuslabel
             // 
             PicStatuslabel.Name = "PicStatuslabel";
-            PicStatuslabel.Size = new Size(118, 17);
-            PicStatuslabel.Text = "toolStripStatusLabel1";
+            PicStatuslabel.Size = new Size(91, 17);
+            PicStatuslabel.Text = "StripStatusLabel";
             // 
             // PicTimer
             // 
@@ -270,7 +272,7 @@
             // AboutMainStripItem
             // 
             AboutMainStripItem.Name = "AboutMainStripItem";
-            AboutMainStripItem.Size = new Size(180, 22);
+            AboutMainStripItem.Size = new Size(107, 22);
             AboutMainStripItem.Text = "About";
             AboutMainStripItem.Click += AboutMainStripItem_Click;
             // 
@@ -331,5 +333,6 @@
         private ToolStripMenuItem ClearMainStripItem;
         private ToolStripMenuItem helpToolStripMenuItem1;
         private ToolStripMenuItem AboutMainStripItem;
+        private ToolTip ToolTip;
     }
 }

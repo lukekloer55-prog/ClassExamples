@@ -67,6 +67,7 @@ namespace BetterEtch_O_Sketch
             this.FormClosing += BetterEtchOSketch_FormClosing;
         }
 
+        //This scans for a device, by searching for a serial port and a received byte from a byte echo.
         async void SearchForPIC()
         {
             if (picScanning || picClosing || !ExternalRadioButton.Checked) return;
@@ -194,6 +195,7 @@ namespace BetterEtch_O_Sketch
             }
         }
 
+        //Take the analog signals from the pic and display the cordinates with a line between the two points, so from the last point to the new point.
         void DrawFromPIC()
         {
             if (!ExternalRadioButton.Checked || adcX < 0 || adcY < 0)
@@ -257,6 +259,7 @@ namespace BetterEtch_O_Sketch
             picTimer.Stop();
             ClosePIC();
         }
+        //Draw a line segment from the lasx and y to the new x and y
         void DrawLineSegment(int newx, int newy)
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
@@ -268,6 +271,7 @@ namespace BetterEtch_O_Sketch
 
         }
 
+        //Draw a sinewave.
         void DrawSineWave()
         {
             //create a graphics object named g that draws on the picture box
@@ -346,7 +350,7 @@ namespace BetterEtch_O_Sketch
             thePen.Dispose();
         }
 
-        // Draws a grid on the picture box
+        // Draws a grid on the picture box, that displays over the waveforms.
         void DrawGrid()
         {
             int xDiv = DisplayPictureBox.Width / 10;
@@ -369,6 +373,7 @@ namespace BetterEtch_O_Sketch
             }
         }
 
+        //Clear the drawing and cause a shake effect and sound, to imitate a etch a sketch.
         void ClearDrawing()
         {
             // create a graphics object named g that draws on the PictureBox
@@ -399,6 +404,7 @@ namespace BetterEtch_O_Sketch
             g.Dispose();
         }
 
+        //Call the diaglog to change the color of the pen.
         private void UpdatePenColor()
         {
             PenColorDialog.ShowDialog();
@@ -432,6 +438,7 @@ namespace BetterEtch_O_Sketch
             this.Close();
         }
 
+        //Check weather the Mouse button is checked and if it is enable it and disable the external pic control.
         private void MouseRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (MouseRadioButton.Checked)
@@ -441,6 +448,7 @@ namespace BetterEtch_O_Sketch
             }
         }
 
+        //Check weather the External button is checked and if it is enable it and disable the mouse control.
         private void ExternalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (ExternalRadioButton.Checked)
@@ -451,7 +459,7 @@ namespace BetterEtch_O_Sketch
         }
 
 
-
+        //Handle the mouse points and the holding down left to draw.
         private void MainDisplayPictureBox_MouseStuff(object sender, MouseEventArgs e)
         {
 
@@ -475,11 +483,8 @@ namespace BetterEtch_O_Sketch
             this.oldY = e.Y;
         }
 
-        private void DisplayPictureBox_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        //Handle the timer that does the checks for the pic or other serial devices.
         private void PicTimer_Tick(object sender, EventArgs e)
         {
             if (!ExternalRadioButton.Checked || picClosing) return;
@@ -523,31 +528,9 @@ namespace BetterEtch_O_Sketch
             }
         }
 
-        private void SelectColorStripMenuItem_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void DrawWaveformStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClearStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void ExitStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Shows the about description if the button is clicked from the file help top menu selection.
         private void AboutMainStripItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This is an EtchOSketch application, with basic drawing functionalities. \n" +
