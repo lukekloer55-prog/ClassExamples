@@ -1,0 +1,3 @@
+Port=COM6
+High=75.0
+Low=68.0
